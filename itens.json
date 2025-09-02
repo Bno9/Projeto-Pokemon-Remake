@@ -1,0 +1,12 @@
+{
+    "poke-ball": {
+        "custo": 200,
+        "categoria": "standard-balls",
+        "atributos": [
+            "countable",
+            "consumable",
+            "usable-in-battle",
+            "holdable"
+        ]
+    }
+}
