@@ -4,9 +4,11 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
 from classes.Pokemons import Pokemon
-from utils.api import get_pokemon
+from classes.Itens import Item
+from utils.api import get_pokeapi
 
-lista_pokemon = []
+lista_pokemons = []
+lista_itens = []
 
 
 try:
@@ -15,36 +17,82 @@ try:
 
         for item, valor in dados.items():
             Poke_formatado = Pokemon(item, valor["tipos"], valor["stats"])
-            lista_pokemon.append(Poke_formatado)
+            lista_pokemons.append(Poke_formatado)
 except json.JSONDecodeError:
     lista_pokemon = []
 
 
-def criar_pokemon():
-        nome = input("Digite o nome do pokemon: ")
 
-        pokemon_json = get_pokemon(nome)
 
-        for i in lista_pokemon:
-             if pokemon_json["name"] == i.nome:
-                print(f"{pokemon_json["name"]} ja existe")
-                return
 
-        stats = {stat['stat']['name']: stat['base_stat'] for stat in pokemon_json["stats"]}
-        tipos = [tipo['type']['name'] for tipo in pokemon_json['types']]
+def pedir_input(endpoint):
+    return input(f"Digite o nome do {endpoint}: ")
+ 
 
-        Poke = Pokemon(pokemon_json["name"], tipos, stats)
-        lista_pokemon.append(Poke)
+def criar_pokemon(endpoint):
+    nome = pedir_input(endpoint)
 
-criar_pokemon()
+    for i in lista_pokemons:
+        if nome == i:
+            print(f"{i} ja existe")
+            return
+
+    pokemon_json = get_pokeapi(nome, endpoint)
+
+    # for i in lista_pokemons:
+    #     if pokemon_json["name"] == i.nome:
+    #         print(f"{pokemon_json["name"]} ja existe")
+    #         return
+
+    stats = {stat['stat']['name']: stat['base_stat'] for stat in pokemon_json["stats"]}
+    tipos = [tipo['type']['name'] for tipo in pokemon_json['types']]
+
+    Poke = Pokemon(pokemon_json["name"], tipos, stats)
+    lista_pokemons.append(Poke)
+
+def criar_item(endpoint):
+    nome = pedir_input(endpoint)
+
+    item_json = get_pokeapi(nome, endpoint)
+
+    for item in lista_itens:
+        if item_json["name"] == item.nome:
+            print(f"{item_json["name"]} ja existe")
+            return
+        
+    itens = Item(item_json["name"], item_json["cost"], item_json["category"]["name"], [item["name"] for item in item_json["attributes"]])
+    lista_itens.append(itens)
+
+def criacao():
+    end_map = {"pokemon": criar_pokemon,
+           "item": criar_item}
+    
+
+    while True:
+        for i in lista_itens:
+            print(i.nome)
+
+        for i in lista_pokemons:
+            print(i.nome)
+
+        endpoint = input("Digite qual requisição deseja fazer (pokemon, item. 0 pra sair):  ")
+
+        if endpoint == "0":
+            return
+
+        escolha = end_map.get(endpoint, lambda: print("Opção inválida"))
+
+        escolha(endpoint)
+
+
+criacao()
 
 with open("pokemons.json", "w", encoding="utf-8") as arquivo:
     json_formatado = {}
 
-    for poke in lista_pokemon:
+    for poke in lista_pokemons:
         json_formatado[poke.nome] = {"tipos": poke.tipos,
                                     "stats": poke.stats}
      
     json.dump(json_formatado, arquivo, indent=4)
-
 
