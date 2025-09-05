@@ -7,7 +7,7 @@ from classes.Pokemons import Pokemon
 from classes.Itens import Item 
 from utils.api import get_pokeapi, get_all_generation
 
-def carregar_json(file, classe, campos):
+def carregar_json(file: str, classe, campos) -> list:
 
     lista = []
     try:
@@ -15,8 +15,14 @@ def carregar_json(file, classe, campos):
             dados = json.load(arquivo)
 
             for item, valor in dados.items():
+
+                if "xp" not in valor["stats"]:
+                    valor["stats"]["xp"] = 0
+
                 args = [item] + [valor[campo] for campo in campos]
                 lista.append(classe(*args))
+
+
     except (json.JSONDecodeError, FileNotFoundError):
         pass
     return lista
@@ -25,10 +31,10 @@ lista_pokemons = carregar_json("pokemons.json", Pokemon, ["tipos", "stats"])
 lista_itens = carregar_json("itens.json", Item, ["custo", "categoria", "atributos"])
 
 
-def pedir_input(endpoint):
+def pedir_input(endpoint: str) -> str:
     return input(f"Digite o nome do {endpoint}: ")
  
-def criar_pokemon(endpoint):
+def criar_pokemon(endpoint: str):
     """
     Função que cria um pokemon atraves do nome ou id passado pelo usuario
     
@@ -55,6 +61,8 @@ def criar_pokemon(endpoint):
 
     stats = {stat['stat']['name']: stat['base_stat'] for stat in pokemon_json["stats"]}
     tipos = [tipo['type']['name'] for tipo in pokemon_json['types']]
+
+    stats["xp"] = 0
 
     Poke = Pokemon(pokemon_json["name"], tipos, stats)
     lista_pokemons.append(Poke)
@@ -87,7 +95,7 @@ def criar_geracao():  #apenas um teste porque ainda nao tenho certeza de como qu
 
         salvar_json(lista_pokemons, "pokemons.json", poke_dict)
 
-def criar_item(endpoint):
+def criar_item(endpoint: str):
     """
     Função que cria um item atraves do nome ou id passado pelo usuario
     
@@ -139,23 +147,21 @@ def criacao():
 
         escolha(endpoint)
 
-def poke_dict(obj):
+def poke_dict(obj) -> dict:
     return{
         "tipos": obj.tipos,
         "stats": obj.stats
     }
 
-def item_dict(obj):
+def item_dict(obj) -> dict:
     return{
         "custo": obj.custo,
         "categoria": obj.categoria,
         "atributos": obj.atributos
     }
 
-def salvar_json(lista, file, mapa_conversao):
+def salvar_json(lista, file: str, mapa_conversao):
     with open(file, "w", encoding="utf-8") as arquivo:
         dados = {obj.nome: mapa_conversao(obj) for obj in lista}
         
         json.dump(dados, arquivo, indent=4)    
-
-criacao()
