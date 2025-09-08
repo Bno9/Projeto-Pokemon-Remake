@@ -12,7 +12,7 @@ class GameData:
         self.lista_pokemon = self.carregar("pokemon.json", Pokemon, ["tipos", "stats"])
         self.lista_items = self.carregar("itens.json", Item, ["custo", "categoria", "atributos"])
         self.pokedex = {}
-        self.mochila = {}
+        self.mochila = self.carregar("mochila.json", dict, [])
         self.dinheiro = 10000
 
 
@@ -20,26 +20,30 @@ class GameData:
     @staticmethod
     def carregar(file: str, classe, campos):
         lista = []
+        dicionario = {}
 
         try:
             with open(file, "r", encoding="utf-8") as arquivo:
                 dados = json.load(arquivo)
 
                 for item, valor in dados.items():
-                    args = [item] + [valor[campo] for campo in campos]
-                    lista.append(classe(*args))
+                    if classe == dict:
+                        dicionario[item] = valor
+
+                    else:
+                        args = [item] + [valor[campo] for campo in campos]
+                        lista.append(classe(*args))
 
 
         except (json.JSONDecodeError, FileNotFoundError):
             pass
 
-        return lista
+        return dicionario if classe == dict else lista
 
     @staticmethod
     def salvar(lista, file: str, mapa_conversao):
         with open(file, "w", encoding="utf-8") as arquivo:
-            dados = {obj.nome: mapa_conversao(obj) for obj in lista}
-        
+            dados = {obj.nome: mapa_conversao(obj) for obj in lista} if isinstance(lista, list) else lista
             json.dump(dados, arquivo, indent=4)    
 
 def pedir_input(endpoint: str) -> str:

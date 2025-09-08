@@ -37,19 +37,22 @@ class ShopMenu(MenuState):
 
 
                 if gamedata.dinheiro >= item_escolhido.custo * quantidade:
-                    if item_escolhido in gamedata.mochila:
-                        gamedata.mochila[item_escolhido]["quantidade"] += quantidade
+                    if item_escolhido.nome in gamedata.mochila:
+                        gamedata.mochila[item_escolhido.nome]["quantidade"] += quantidade
                     else:
-                        gamedata.mochila[item_escolhido] = {"valor_venda": item_escolhido.custo / 2,
+                        gamedata.mochila[item_escolhido.nome] = {"valor_venda": item_escolhido.custo / 2,
                                                             "quantidade": quantidade,
                                                             "atributos": item_escolhido.atributos}
                 
-                break
+                gamedata.salvar(gamedata.mochila, "mochila.json", lambda x: x)
 
-            return menu.hora_atualizacao
+                print(f"Você comprou {quantidade} {item_escolhido.nome}, e gastou {item_escolhido.custo * quantidade}")
+                
+                break
                     
-        if escolha == "0":
+        elif escolha == "0":
             menu.change_state(MainMenu())
+
         else:
             print("Opção inválida")
 

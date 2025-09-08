@@ -1,0 +1,22 @@
+{
+    "ultra-ball": {
+        "valor_venda": 400.0,
+        "quantidade": 14,
+        "atributos": [
+            "countable",
+            "consumable",
+            "usable-in-battle",
+            "holdable"
+        ]
+    },
+    "poke-ball": {
+        "valor_venda": 100.0,
+        "quantidade": 10,
+        "atributos": [
+            "countable",
+            "consumable",
+            "usable-in-battle",
+            "holdable"
+        ]
+    }
+}

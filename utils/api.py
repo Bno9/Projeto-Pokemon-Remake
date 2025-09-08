@@ -56,3 +56,5 @@ def get_all_generation():
 
     print("Geração transferida com sucesso.")
     return response.json()
+
+
