@@ -45,11 +45,11 @@ def get_all_generation():
     if response.status_code != 200:
         raise ValueError(f"geração não encontrada.")
     
-    teste = response.json()
+    generation = response.json()
 
     inicio = datetime.now()
 
-    for j in teste["pokemon_species"]:
+    for j in generation["pokemon_species"]:
         final = datetime.now()
         tempo = final - inicio
         print(f"{j["name"]} transferido da api com sucesso às {datetime.now()} Tempo de espera: {tempo}")

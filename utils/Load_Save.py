@@ -7,29 +7,40 @@ from classes.Pokemons import Pokemon
 from classes.Itens import Item 
 from utils.api import get_pokeapi, get_all_generation
 
-def carregar_json(file: str, classe, campos) -> list:
-
-    lista = []
-    try:
-        with open(file, "r", encoding="utf-8") as arquivo:
-            dados = json.load(arquivo)
-
-            for item, valor in dados.items():
-
-                if "xp" not in valor["stats"]:
-                    valor["stats"]["xp"] = 0
-
-                args = [item] + [valor[campo] for campo in campos]
-                lista.append(classe(*args))
+class GameData:
+    def __init__(self):
+        self.lista_pokemon = self.carregar("pokemon.json", Pokemon, ["tipos", "stats"])
+        self.lista_items = self.carregar("itens.json", Item, ["custo", "categoria", "atributos"])
+        self.pokedex = {}
+        self.mochila = {}
+        self.dinheiro = 10000
 
 
-    except (json.JSONDecodeError, FileNotFoundError):
-        pass
-    return lista
+    #Vou passar o save e load do json pra cá, e então mandar essa classe la pro Load_Save.py e importar pra ca
+    @staticmethod
+    def carregar(file: str, classe, campos):
+        lista = []
 
-lista_pokemons = carregar_json("pokemons.json", Pokemon, ["tipos", "stats"])
-lista_itens = carregar_json("itens.json", Item, ["custo", "categoria", "atributos"])
+        try:
+            with open(file, "r", encoding="utf-8") as arquivo:
+                dados = json.load(arquivo)
 
+                for item, valor in dados.items():
+                    args = [item] + [valor[campo] for campo in campos]
+                    lista.append(classe(*args))
+
+
+        except (json.JSONDecodeError, FileNotFoundError):
+            pass
+
+        return lista
+
+    @staticmethod
+    def salvar(lista, file: str, mapa_conversao):
+        with open(file, "w", encoding="utf-8") as arquivo:
+            dados = {obj.nome: mapa_conversao(obj) for obj in lista}
+        
+            json.dump(dados, arquivo, indent=4)    
 
 def pedir_input(endpoint: str) -> str:
     return input(f"Digite o nome do {endpoint}: ")
@@ -47,7 +58,7 @@ def criar_pokemon(endpoint: str):
 
     nome = pedir_input(endpoint)
 
-    for i in lista_pokemons:
+    for i in gamedata.lista_pokemon:
         if nome == i:
             print(f"{i} ja existe")
             return
@@ -65,9 +76,9 @@ def criar_pokemon(endpoint: str):
     stats["xp"] = 0
 
     Poke = Pokemon(pokemon_json["name"], tipos, stats)
-    lista_pokemons.append(Poke)
+    gamedata.lista_pokemon.append(Poke)
 
-    salvar_json(lista_pokemons, "pokemons.json", poke_dict)
+    gamedata.salvar_json(GameData.lista_pokemon, "pokemons.json", poke_dict)
 
 def criar_geracao():  #apenas um teste porque ainda nao tenho certeza de como quero fazer a criação dos pokemons, mas por enquanto vou trabalhar apenas com a primeira geração
     """
@@ -91,9 +102,9 @@ def criar_geracao():  #apenas um teste porque ainda nao tenho certeza de como qu
         tipos = [tipo['type']['name'] for tipo in pokemon_json['types']]
 
         Poke = Pokemon(pokemon_json["name"], tipos, stats)
-        lista_pokemons.append(Poke)
+        gamedata.lista_pokemon.append(Poke)
 
-        salvar_json(lista_pokemons, "pokemons.json", poke_dict)
+        gamedata.salvar(gamedata.lista_pokemon, "pokemons.json", poke_dict)
 
 def criar_item(endpoint: str):
     """
@@ -110,15 +121,15 @@ def criar_item(endpoint: str):
 
     item_json = get_pokeapi(nome, endpoint)
 
-    for item in lista_itens:
+    for item in gamedata.lista_items:
         if item_json["name"] == item.nome:
             print(f"{item_json["name"]} ja existe")
             return
         
     itens = Item(item_json["name"], item_json["cost"], item_json["category"]["name"], [item["name"] for item in item_json["attributes"]])
-    lista_itens.append(itens)
+    gamedata.lista_items.append(itens)
 
-    salvar_json(lista_itens, "itens.json", item_dict)
+    gamedata.salvar(gamedata.lista_items, "itens.json", item_dict)
 
 def criacao():
     """
@@ -160,8 +171,5 @@ def item_dict(obj) -> dict:
         "atributos": obj.atributos
     }
 
-def salvar_json(lista, file: str, mapa_conversao):
-    with open(file, "w", encoding="utf-8") as arquivo:
-        dados = {obj.nome: mapa_conversao(obj) for obj in lista}
-        
-        json.dump(dados, arquivo, indent=4)    
+
+gamedata = GameData()

@@ -1,4 +1,39 @@
 {
+    "ultra-ball": {
+        "custo": 800,
+        "categoria": "standard-balls",
+        "atributos": [
+            "countable",
+            "consumable",
+            "usable-in-battle",
+            "holdable"
+        ]
+    },
+    "safari-ball": {
+        "custo": 0,
+        "categoria": "standard-balls",
+        "atributos": [
+            "countable",
+            "consumable",
+            "usable-in-battle",
+            "holdable"
+        ]
+    },
+    "pearl": {
+        "custo": 2000,
+        "categoria": "loot",
+        "atributos": []
+    },
+    "repeat-ball": {
+        "custo": 1000,
+        "categoria": "special-balls",
+        "atributos": [
+            "countable",
+            "consumable",
+            "usable-in-battle",
+            "holdable"
+        ]
+    },
     "poke-ball": {
         "custo": 200,
         "categoria": "standard-balls",

@@ -1,0 +1,75 @@
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import random
+from datetime import datetime, timedelta
+
+from Principal.Main_Menu import Fluxo, MenuState, MainMenu #Importei a variavel hora_atualização só pra teste, mas quero fazer de um jeito mais organizado depois
+
+class ShopMenu(MenuState):
+    """Menu da loja, irei implementar a compra de itens
+    
+    Args: menu: objeto que controla os estados da classe Menu
+    
+    Returns: None"""
+
+    def execute(self, menu, gamedata):
+        print("\n=== Loja ===")
+        print("1 - Comprar")
+        print("0 - Voltar")
+        escolha = input("Escolha: ").strip()
+
+        if escolha == "1":
+
+            while True:
+                #Aqui ta funcional, só falta arrumar a lista inicial que vem antes da atualização e fica vazia, quebrando o programa
+                itens = atualizar_loja(gamedata.lista_items, menu)
+
+                print(f"A loja ira atualizar em: {menu.hora_atualizacao}. Itens disponives na loja:")
+                for numero, item in enumerate(itens, start=1):
+                    print(f"{numero} - {item} - preço: {item.custo}")
+               
+                compra = int(input("Digite o numero de qual item deseja comprar: ")) - 1
+
+                quantidade = int(input("Digite quantos itens deseja comprar: "))
+
+                item_escolhido = itens[compra]
+
+
+                if gamedata.dinheiro >= item_escolhido.custo * quantidade:
+                    if item_escolhido in gamedata.mochila:
+                        gamedata.mochila[item_escolhido]["quantidade"] += quantidade
+                    else:
+                        gamedata.mochila[item_escolhido] = {"valor_venda": item_escolhido.custo / 2,
+                                                            "quantidade": quantidade,
+                                                            "atributos": item_escolhido.atributos}
+                
+                break
+
+            return menu.hora_atualizacao
+                    
+        if escolha == "0":
+            menu.change_state(MainMenu())
+        else:
+            print("Opção inválida")
+
+
+def atualizar_loja(lista_items, menu):
+    hora_atual = datetime.now()
+
+    if hora_atual >= menu.hora_atualizacao:
+        itens_disponiveis = []
+        for _ in range (0,3):
+            while True:
+                item_aleatorio = random.choice(lista_items)  #descobri que poderia usar random.sample no lugar de fazer essa lógica, mas agora prefiro deixar desse jeito
+                if item_aleatorio not in itens_disponiveis:
+                    itens_disponiveis.append(item_aleatorio)
+                    break
+                else:
+                    continue
+
+        menu.hora_atualizacao = hora_atual + timedelta(seconds=30)
+        return itens_disponiveis
+        
+    
+        
