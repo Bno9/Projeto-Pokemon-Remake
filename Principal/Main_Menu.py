@@ -53,7 +53,7 @@ class Fluxo:
         self.state = MainMenu()   #Estado inicial
         self.running = True
         self.game_data = GameData()
-        self.hora_atualizacao = datetime.now() + timedelta(seconds=3)
+        self.hora_atualizacao = datetime.now() + timedelta(seconds=30)
 
     def change_state(self, new_state):
         self.state = new_state

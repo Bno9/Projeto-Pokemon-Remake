@@ -20,11 +20,9 @@ class CapturarMenu(MenuState):
 
             escolha = input(f"Um {pokemon_selvagem} apareceu, deseja captura-lo?\n1-Capturar\n2-Fugir\n3-Voltar ao menu principal").strip()
 
-
-
             if escolha == 1:
                 for item, valor in gamedata.mochila:
-                    if item["pokeball"] and valor["quantidade"] > 0:
+                    if item["poke-ball"] and valor["quantidade"] > 0:
                         pass
 
             if escolha == 2:

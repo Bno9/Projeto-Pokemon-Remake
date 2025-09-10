@@ -7,9 +7,10 @@ from datetime import datetime, timedelta
 from Principal.Main_Menu import Fluxo, MenuState, MainMenu #Importei a variavel hora_atualização só pra teste, mas quero fazer de um jeito mais organizado depois
 
 class ShopMenu(MenuState):
-    """Menu da loja, irei implementar a compra de itens
+    """Menu da loja
     
     Args: menu: objeto que controla os estados da classe Menu
+          gamedata: informações do jogo
     
     Returns: None"""
 
@@ -20,20 +21,22 @@ class ShopMenu(MenuState):
         escolha = input("Escolha: ").strip()
 
         if escolha == "1":
-
             while True:
-                #Aqui ta funcional, só falta arrumar a lista inicial que vem antes da atualização e fica vazia, quebrando o programa
-                itens = atualizar_loja(gamedata.lista_items, menu)
+                gamedata.estoque = atualizar_loja(gamedata.estoque, gamedata.lista_items, menu)
+
+                if not gamedata.estoque:
+                    print(f"A loja está sem estoque no momento. Volte novamente em {menu.hora_atualizacao - datetime.now()}")
+                    break
 
                 print(f"A loja ira atualizar em: {menu.hora_atualizacao}. Itens disponives na loja:")
-                for numero, item in enumerate(itens, start=1):
+                for numero, item in enumerate(gamedata.estoque, start=1):
                     print(f"{numero} - {item} - preço: {item.custo}")
                
                 compra = int(input("Digite o numero de qual item deseja comprar: ")) - 1
 
                 quantidade = int(input("Digite quantos itens deseja comprar: "))
 
-                item_escolhido = itens[compra]
+                item_escolhido = gamedata.estoque[compra]
 
 
                 if gamedata.dinheiro >= item_escolhido.custo * quantidade:
@@ -57,7 +60,7 @@ class ShopMenu(MenuState):
             print("Opção inválida")
 
 
-def atualizar_loja(lista_items, menu):
+def atualizar_loja(estoque, lista_items: list, menu) -> list :
     hora_atual = datetime.now()
 
     if hora_atual >= menu.hora_atualizacao:
@@ -73,6 +76,14 @@ def atualizar_loja(lista_items, menu):
 
         menu.hora_atualizacao = hora_atual + timedelta(seconds=30)
         return itens_disponiveis
-        
+    
+    return estoque
     
         
+
+#coisas pra arrumar
+# 
+# 1 - Não da pra acessar a loja assim que abre o arquivo, precisa esperar 3 segundos pra loja ser atualizada e realmente existir uma lista com itens ali. Preciso criar uma lista antes da atualização, mas to na duvida de como fazer
+# 2 - Depois da primeira atualização, a segunda chamada no loop da o mesmo erro da primeira. Pelo visto a lista é apagada e o atualizar itens para de funcionar, não entendi direito
+# 
+# gamedata

@@ -14,9 +14,8 @@ class GameData:
         self.pokedex = {}
         self.mochila = self.carregar("mochila.json", dict, [])
         self.dinheiro = 10000
+        self.estoque = []
 
-
-    #Vou passar o save e load do json pra cá, e então mandar essa classe la pro Load_Save.py e importar pra ca
     @staticmethod
     def carregar(file: str, classe, campos):
         lista = []
