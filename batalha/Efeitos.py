@@ -1,0 +1,1 @@
+#Aqui tera as funções de vantagem e desvantagem por tipo de pokemon, efeitos de itens e ataques

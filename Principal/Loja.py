@@ -10,7 +10,7 @@ class ShopMenu(MenuState):
     """Menu da loja
     
     Args: menu: objeto que controla os estados da classe Menu
-          gamedata: informações do jogo
+          gamedata: objeto que controla todas informações do jogo
     
     Returns: None"""
 
@@ -25,10 +25,10 @@ class ShopMenu(MenuState):
                 gamedata.estoque = atualizar_loja(gamedata.estoque, gamedata.lista_items, menu)
 
                 if not gamedata.estoque:
-                    print(f"A loja está sem estoque no momento. Volte novamente em {menu.hora_atualizacao - datetime.now()}")
+                    print(f"A loja está sem estoque no momento. Volte novamente as {menu.hora_atualizacao.strftime("%H:%M:%S")}")
                     break
 
-                print(f"A loja ira atualizar em: {menu.hora_atualizacao}. Itens disponives na loja:")
+                print(f"A loja ira atualizar as: {menu.hora_atualizacao}. Itens disponives na loja:")
                 for numero, item in enumerate(gamedata.estoque, start=1):
                     print(f"{numero} - {item} - preço: {item.custo}")
                
@@ -61,6 +61,14 @@ class ShopMenu(MenuState):
 
 
 def atualizar_loja(estoque, lista_items: list, menu) -> list :
+    """Função auxilixar que atualiza a loja
+    
+    Args: estoque: Objeto do gamedata com o estoque atual da loja
+          lista_items: Objeto do gamedata com informação de cada item existente
+          menu: Objeto que controla os estados das classes menu
+    
+    Returns: List"""
+     
     hora_atual = datetime.now()
 
     if hora_atual >= menu.hora_atualizacao:
@@ -78,12 +86,3 @@ def atualizar_loja(estoque, lista_items: list, menu) -> list :
         return itens_disponiveis
     
     return estoque
-    
-        
-
-#coisas pra arrumar
-# 
-# 1 - Não da pra acessar a loja assim que abre o arquivo, precisa esperar 3 segundos pra loja ser atualizada e realmente existir uma lista com itens ali. Preciso criar uma lista antes da atualização, mas to na duvida de como fazer
-# 2 - Depois da primeira atualização, a segunda chamada no loop da o mesmo erro da primeira. Pelo visto a lista é apagada e o atualizar itens para de funcionar, não entendi direito
-# 
-# gamedata

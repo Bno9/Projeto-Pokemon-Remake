@@ -8,8 +8,9 @@ from classes.Itens import Item
 from utils.api import get_pokeapi, get_all_generation
 
 class GameData:
+    """Classe com todas informações do jogo"""
     def __init__(self):
-        self.lista_pokemon = self.carregar("pokemon.json", Pokemon, ["tipos", "stats"])
+        self.lista_pokemon = self.carregar("pokemons.json", Pokemon, ["tipos", "stats"])
         self.lista_items = self.carregar("itens.json", Item, ["custo", "categoria", "atributos"])
         self.pokedex = {}
         self.mochila = self.carregar("mochila.json", dict, [])
@@ -18,6 +19,13 @@ class GameData:
 
     @staticmethod
     def carregar(file: str, classe, campos):
+        """Menu de carregamento dos json
+    
+          Args: file: o arquivo que vai ser aberto 
+                classe: a classe que será utilizada para criação dos objetos
+                campos: os campos que serao usados como parametros na criação
+    
+          Returns: List or Dict"""
         lista = []
         dicionario = {}
 
@@ -41,6 +49,13 @@ class GameData:
 
     @staticmethod
     def salvar(lista, file: str, mapa_conversao):
+        """Menu de salvamento dos json
+    
+          Args: file: o arquivo que vai ser aberto 
+                lista: a lista que será utilizada para conversão dos objetos
+                mapa_conversao: a função auxiliar que ira fazer a conversão dos objetos 
+    
+          Returns: List or Dict"""
         with open(file, "w", encoding="utf-8") as arquivo:
             dados = {obj.nome: mapa_conversao(obj) for obj in lista} if isinstance(lista, list) else lista
             json.dump(dados, arquivo, indent=4)    

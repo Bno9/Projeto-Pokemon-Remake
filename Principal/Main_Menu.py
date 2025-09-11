@@ -33,7 +33,7 @@ class MainMenu(MenuState):
         if escolha == "1":
             from Principal.Capturar import CapturarMenu
             menu.change_state(CapturarMenu())
-        if escolha == "2":
+        elif escolha == "2":
             from Principal.Loja import ShopMenu
             menu.change_state(ShopMenu())
         elif escolha == "3":
