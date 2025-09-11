@@ -76,7 +76,7 @@ class CapturarMenu(MenuState):
           Returns: Boolean"""
         
         for item, valor in gamedata.mochila.items():
-            if item == "poke-ball" and valor["quantidade"] > 0:
+            if item == "poke-ball" and valor["quantidade"] > 0: #aqui eu posso fazer algo como valor["standard-balls"], e depois um print mostrando todas pokebolas disponiveis, ai eu faço o usuario digitar qual quer usar e vou nela
                 valor["quantidade"] -= 1
                 print("Você usou uma pokebola")
                 gamedata.salvar(gamedata.mochila, "mochila.json", lambda x: x)

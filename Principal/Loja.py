@@ -22,7 +22,7 @@ class ShopMenu(MenuState):
 
         if escolha == "1":
             while True:
-                gamedata.estoque = atualizar_loja(gamedata.estoque, gamedata.lista_items, menu)
+                gamedata.estoque = self.atualizar_loja(gamedata.estoque, gamedata.lista_items, menu)
 
                 if not gamedata.estoque:
                     print(f"A loja está sem estoque no momento. Volte novamente as {menu.hora_atualizacao.strftime("%H:%M:%S")}")
@@ -32,12 +32,14 @@ class ShopMenu(MenuState):
                 for numero, item in enumerate(gamedata.estoque, start=1):
                     print(f"{numero} - {item} - preço: {item.custo}")
                
-                compra = int(input("Digite o numero de qual item deseja comprar: ")) - 1
+                compra = int(input("Digite o numero de qual item deseja comprar, ou digite 0 se quiser voltar: ")) - 1
+
+                if compra == -1:
+                    break
 
                 quantidade = int(input("Digite quantos itens deseja comprar: "))
 
                 item_escolhido = gamedata.estoque[compra]
-
 
                 if gamedata.dinheiro >= item_escolhido.custo * quantidade:
                     if item_escolhido.nome in gamedata.mochila:
@@ -50,7 +52,6 @@ class ShopMenu(MenuState):
                 gamedata.salvar(gamedata.mochila, "mochila.json", lambda x: x)
 
                 print(f"Você comprou {quantidade} {item_escolhido.nome}, e gastou {item_escolhido.custo * quantidade}")
-                
                 break
                     
         elif escolha == "0":
@@ -60,29 +61,31 @@ class ShopMenu(MenuState):
             print("Opção inválida")
 
 
-def atualizar_loja(estoque, lista_items: list, menu) -> list :
-    """Função auxilixar que atualiza a loja
-    
-    Args: estoque: Objeto do gamedata com o estoque atual da loja
-          lista_items: Objeto do gamedata com informação de cada item existente
-          menu: Objeto que controla os estados das classes menu
-    
-    Returns: List"""
-     
-    hora_atual = datetime.now()
+    def atualizar_loja(self, estoque, lista_items: list, menu) -> list :
+        """Função auxilixar que atualiza a loja
+        
+        Args: estoque: Objeto do gamedata com o estoque atual da loja
+            lista_items: Objeto do gamedata com informação de cada item existente
+            menu: Objeto que controla os estados das classes menu
+        
+        Returns: List"""
+        
+        hora_atual = datetime.now()
 
-    if hora_atual >= menu.hora_atualizacao:
-        itens_disponiveis = []
-        for _ in range (0,3):
-            while True:
-                item_aleatorio = random.choice(lista_items)  #descobri que poderia usar random.sample no lugar de fazer essa lógica, mas agora prefiro deixar desse jeito
-                if item_aleatorio not in itens_disponiveis:
-                    itens_disponiveis.append(item_aleatorio)
-                    break
-                else:
-                    continue
+        if hora_atual >= menu.hora_atualizacao:
+            itens_disponiveis = []
+            for _ in range (0,3):
+                while True:
+                    item_aleatorio = random.choice(lista_items)  #descobri que poderia usar random.sample no lugar de fazer essa lógica, mas agora prefiro deixar desse jeito
+                    if item_aleatorio.custo <= 0:
+                        continue
+                    if item_aleatorio not in itens_disponiveis:
+                        itens_disponiveis.append(item_aleatorio)
+                        break
+                    else:
+                        continue
 
-        menu.hora_atualizacao = hora_atual + timedelta(seconds=30)
-        return itens_disponiveis
-    
-    return estoque
+            menu.hora_atualizacao = hora_atual + timedelta(seconds=30)
+            return itens_disponiveis
+        
+        return estoque

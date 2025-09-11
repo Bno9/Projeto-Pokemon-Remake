@@ -12,9 +12,9 @@ class GameData:
     def __init__(self):
         self.lista_pokemon = self.carregar("pokemons.json", Pokemon, ["tipos", "stats"])
         self.lista_items = self.carregar("itens.json", Item, ["custo", "categoria", "atributos"])
-        self.pokedex = {}
+        self.pokedex = self.carregar("pokedex.json", dict, [])
         self.mochila = self.carregar("mochila.json", dict, [])
-        self.dinheiro = 10000
+        self.dinheiro = 0
         self.estoque = []
 
     @staticmethod

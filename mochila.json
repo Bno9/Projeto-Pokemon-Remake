@@ -11,7 +11,7 @@
     },
     "poke-ball": {
         "valor_venda": 100.0,
-        "quantidade": 0,
+        "quantidade": 100,
         "atributos": [
             "countable",
             "consumable",

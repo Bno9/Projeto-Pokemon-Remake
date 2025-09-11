@@ -10,4 +10,4 @@ class Item:
         self.atributos = atributos
 
     def __str__(self):
-        return f"{self.nome} | Preço: {self.custo} | Categoria: {self.categoria} | Atributos: {self.atributos}"
+        return f"{self.nome} | Preço: {self.custo} | Categoria: {self.categoria} | Atributos: {self.atributos if self.atributos else "Nenhum"}"
