@@ -74,13 +74,40 @@ class CapturarMenu(MenuState):
           gamedata: objeto que controla todas informações do jogo
     
           Returns: Boolean"""
-        
-        for item, valor in gamedata.mochila.items():
-            if item == "poke-ball" and valor["quantidade"] > 0: #aqui eu posso fazer algo como valor["standard-balls"], e depois um print mostrando todas pokebolas disponiveis, ai eu faço o usuario digitar qual quer usar e vou nela
-                valor["quantidade"] -= 1
-                print("Você usou uma pokebola")
-                gamedata.salvar(gamedata.mochila, "mochila.json", lambda x: x)
-                return True
+        lista_pokebolas = [
+            (item, valor["quantidade"]) 
+            for item, valor in gamedata.mochila.items()
+            if valor.get("categoria") == "standard-balls"
+                           ]
 
-        print("Você não tem pokebolas")
-        return False
+        if not lista_pokebolas:
+            print("Você não tem pokebolas")
+            return False
+     
+        for numero, (pokebola, valor) in enumerate(lista_pokebolas, start=1):
+            print(f"{numero} - {pokebola} | quantidade: {valor}")
+
+        escolha = int(input("Escolha qual pokebola deseja usar: ")) - 1
+
+        if 0 <= escolha < len(lista_pokebolas):
+            pokebola_escolhida = lista_pokebolas[escolha][0]
+                
+            atributos = gamedata.mochila.get(pokebola_escolhida)
+            if atributos["quantidade"] > 0:
+                atributos["quantidade"] -= 1
+                print(f"Você usou uma {pokebola_escolhida}")
+                gamedata.salvar(gamedata.mochila, "mochila.json", lambda x: x)
+            
+            else:
+                print(f"Você não tem mais {pokebola_escolhida}")
+                return False
+        
+        else:
+            print("Escolha uma opção válida")
+            return False
+
+        return True
+    
+
+
+#Próximo passo é fazer a chance de captura de cada pokebola

@@ -1,7 +1,8 @@
 {
     "ultra-ball": {
         "valor_venda": 400.0,
-        "quantidade": 24,
+        "quantidade": 12,
+        "categoria": "standard-balls",
         "atributos": [
             "countable",
             "consumable",
@@ -11,7 +12,8 @@
     },
     "poke-ball": {
         "valor_venda": 100.0,
-        "quantidade": 100,
+        "quantidade": 8,
+        "categoria": "standard-balls",
         "atributos": [
             "countable",
             "consumable",
@@ -26,7 +28,8 @@
     },
     "repeat-ball": {
         "valor_venda": 500.0,
-        "quantidade": 6,
+        "quantidade": 5,
+        "categoria": "standard-balls",
         "atributos": [
             "countable",
             "consumable",
@@ -36,7 +39,8 @@
     },
     "safari-ball": {
         "valor_venda": 0.0,
-        "quantidade": 3,
+        "quantidade": 0,
+        "categoria": "standard-balls",
         "atributos": [
             "countable",
             "consumable",

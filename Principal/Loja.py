@@ -47,6 +47,7 @@ class ShopMenu(MenuState):
                     else:
                         gamedata.mochila[item_escolhido.nome] = {"valor_venda": item_escolhido.custo / 2,
                                                             "quantidade": quantidade,
+                                                            "categoria": item_escolhido.categoria,
                                                             "atributos": item_escolhido.atributos}
                 
                 gamedata.salvar(gamedata.mochila, "mochila.json", lambda x: x)

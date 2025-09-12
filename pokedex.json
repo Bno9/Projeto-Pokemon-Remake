@@ -13,5 +13,281 @@
             "speed": 90
         },
         "hp_atual": 50
+    },
+    "tauros": {
+        "nome": "tauros",
+        "tipos": [
+            "normal"
+        ],
+        "stats": {
+            "hp": 75,
+            "attack": 100,
+            "defense": 95,
+            "special-attack": 40,
+            "special-defense": 70,
+            "speed": 110
+        },
+        "hp_atual": 75
+    },
+    "kingler": {
+        "nome": "kingler",
+        "tipos": [
+            "water"
+        ],
+        "stats": {
+            "hp": 55,
+            "attack": 130,
+            "defense": 115,
+            "special-attack": 50,
+            "special-defense": 50,
+            "speed": 75
+        },
+        "hp_atual": 55
+    },
+    "parasect": {
+        "nome": "parasect",
+        "tipos": [
+            "bug",
+            "grass"
+        ],
+        "stats": {
+            "hp": 60,
+            "attack": 95,
+            "defense": 80,
+            "special-attack": 60,
+            "special-defense": 80,
+            "speed": 30
+        },
+        "hp_atual": 60
+    },
+    "shellder": {
+        "nome": "shellder",
+        "tipos": [
+            "water"
+        ],
+        "stats": {
+            "hp": 30,
+            "attack": 65,
+            "defense": 100,
+            "special-attack": 45,
+            "special-defense": 25,
+            "speed": 40
+        },
+        "hp_atual": 30
+    },
+    "weezing": {
+        "nome": "weezing",
+        "tipos": [
+            "poison"
+        ],
+        "stats": {
+            "hp": 65,
+            "attack": 90,
+            "defense": 120,
+            "special-attack": 85,
+            "special-defense": 70,
+            "speed": 60
+        },
+        "hp_atual": 65
+    },
+    "clefable": {
+        "nome": "clefable",
+        "tipos": [
+            "fairy"
+        ],
+        "stats": {
+            "hp": 95,
+            "attack": 70,
+            "defense": 73,
+            "special-attack": 95,
+            "special-defense": 90,
+            "speed": 60
+        },
+        "hp_atual": 95
+    },
+    "sandslash": {
+        "nome": "sandslash",
+        "tipos": [
+            "ground"
+        ],
+        "stats": {
+            "hp": 75,
+            "attack": 100,
+            "defense": 110,
+            "special-attack": 45,
+            "special-defense": 55,
+            "speed": 65
+        },
+        "hp_atual": 75
+    },
+    "poliwag": {
+        "nome": "poliwag",
+        "tipos": [
+            "water"
+        ],
+        "stats": {
+            "hp": 40,
+            "attack": 50,
+            "defense": 40,
+            "special-attack": 40,
+            "special-defense": 40,
+            "speed": 90
+        },
+        "hp_atual": 40
+    },
+    "porygon": {
+        "nome": "porygon",
+        "tipos": [
+            "normal"
+        ],
+        "stats": {
+            "hp": 65,
+            "attack": 60,
+            "defense": 70,
+            "special-attack": 85,
+            "special-defense": 75,
+            "speed": 40
+        },
+        "hp_atual": 65
+    },
+    "gloom": {
+        "nome": "gloom",
+        "tipos": [
+            "grass",
+            "poison"
+        ],
+        "stats": {
+            "hp": 60,
+            "attack": 65,
+            "defense": 70,
+            "special-attack": 85,
+            "special-defense": 75,
+            "speed": 40
+        },
+        "hp_atual": 60
+    },
+    "onix": {
+        "nome": "onix",
+        "tipos": [
+            "rock",
+            "ground"
+        ],
+        "stats": {
+            "hp": 35,
+            "attack": 45,
+            "defense": 160,
+            "special-attack": 30,
+            "special-defense": 45,
+            "speed": 70
+        },
+        "hp_atual": 35
+    },
+    "omastar": {
+        "nome": "omastar",
+        "tipos": [
+            "rock",
+            "water"
+        ],
+        "stats": {
+            "hp": 70,
+            "attack": 60,
+            "defense": 125,
+            "special-attack": 115,
+            "special-defense": 70,
+            "speed": 55
+        },
+        "hp_atual": 70
+    },
+    "zubat": {
+        "nome": "zubat",
+        "tipos": [
+            "poison",
+            "flying"
+        ],
+        "stats": {
+            "hp": 40,
+            "attack": 45,
+            "defense": 35,
+            "special-attack": 30,
+            "special-defense": 40,
+            "speed": 55
+        },
+        "hp_atual": 40
+    },
+    "dugtrio": {
+        "nome": "dugtrio",
+        "tipos": [
+            "ground"
+        ],
+        "stats": {
+            "hp": 35,
+            "attack": 100,
+            "defense": 50,
+            "special-attack": 50,
+            "special-defense": 70,
+            "speed": 120
+        },
+        "hp_atual": 35
+    },
+    "hitmonchan": {
+        "nome": "hitmonchan",
+        "tipos": [
+            "fighting"
+        ],
+        "stats": {
+            "hp": 50,
+            "attack": 105,
+            "defense": 79,
+            "special-attack": 35,
+            "special-defense": 110,
+            "speed": 76
+        },
+        "hp_atual": 50
+    },
+    "tentacool": {
+        "nome": "tentacool",
+        "tipos": [
+            "water",
+            "poison"
+        ],
+        "stats": {
+            "hp": 40,
+            "attack": 40,
+            "defense": 35,
+            "special-attack": 50,
+            "special-defense": 100,
+            "speed": 70
+        },
+        "hp_atual": 40
+    },
+    "blastoise": {
+        "nome": "blastoise",
+        "tipos": [
+            "water"
+        ],
+        "stats": {
+            "hp": 79,
+            "attack": 83,
+            "defense": 100,
+            "special-attack": 85,
+            "special-defense": 105,
+            "speed": 78
+        },
+        "hp_atual": 79
+    },
+    "snorlax": {
+        "nome": "snorlax",
+        "tipos": [
+            "normal"
+        ],
+        "stats": {
+            "hp": 160,
+            "attack": 110,
+            "defense": 65,
+            "special-attack": 65,
+            "special-defense": 110,
+            "speed": 30
+        },
+        "hp_atual": 160
     }
 }
