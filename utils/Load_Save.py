@@ -4,17 +4,17 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
 from classes.Pokemons import Pokemon
-from classes.Itens import Item 
+from classes.Itens import Item, Pokebola
 from utils.api import get_pokeapi, get_all_generation
 
 class GameData:
     """Classe com todas informações do jogo"""
     def __init__(self):
         self.lista_pokemon = self.carregar("pokemons.json", Pokemon, ["tipos", "stats"])
-        self.lista_items = self.carregar("itens.json", Item, ["custo", "categoria", "atributos"])
-        self.pokedex = self.carregar("pokedex.json", dict, [])
-        self.mochila = self.carregar("mochila.json", dict, [])
-        self.dinheiro = 0
+        self.lista_items = self.carregar("itens.json", Item, ["custo", "categoria", "atributos", "quantidade"])
+        self.pokedex = self.carregar("pokedex.json", Pokemon, ["tipos", "stats"])
+        self.mochila = self.carregar("mochila.json", Item, ["custo", "categoria", "atributos", "quantidade"])
+        self.dinheiro = 1000000
         self.estoque = []
 
     @staticmethod
@@ -33,32 +33,46 @@ class GameData:
             with open(file, "r", encoding="utf-8") as arquivo:
                 dados = json.load(arquivo)
 
+                mapa = {"standard-balls": Pokebola}
+
                 for item, valor in dados.items():
-                    if classe == dict:
-                        dicionario[item] = valor
+
+                    if "categoria" in valor:
+                        subclasse = mapa.get(valor["categoria"], classe)
 
                     else:
-                        args = [item] + [valor[campo] for campo in campos]
-                        lista.append(classe(*args))
+                        subclasse = classe
 
-
+                    args = [item] + [valor.get(campo, None) for campo in campos]
+                    obj = subclasse(*args)
+                    
+                    if file in ["mochila.json", "pokedex.json"]:
+                        dicionario[obj.nome] = obj
+                    else:
+                        lista.append(obj)
+                    
         except (json.JSONDecodeError, FileNotFoundError):
             pass
 
-        return dicionario if classe == dict else lista
+        return dicionario if file in ["mochila.json", "pokedex.json"] else lista
 
     @staticmethod
-    def salvar(lista, file: str, mapa_conversao):
+    def salvar(lista, file: str, funcao_dict):
         """Menu de salvamento dos json
     
           Args: file: o arquivo que vai ser aberto 
                 lista: a lista que será utilizada para conversão dos objetos
-                mapa_conversao: a função auxiliar que ira fazer a conversão dos objetos 
+                funcao_dict: a função auxiliar que ira fazer a conversão dos objetos 
     
           Returns: List or Dict"""
         with open(file, "w", encoding="utf-8") as arquivo:
-            dados = {obj.nome: mapa_conversao(obj) for obj in lista} if isinstance(lista, list) else lista
-            json.dump(dados, arquivo, indent=4)    
+            if isinstance(lista, list):
+                dados = {obj.nome: funcao_dict(obj) for obj in lista}
+            elif isinstance(lista, dict):
+                dados = {nome: funcao_dict(obj) for nome, obj in lista.items()}
+            else:
+                dados = lista
+            json.dump(dados, arquivo, indent=4)          
 
 def pedir_input(endpoint: str) -> str:
     return input(f"Digite o nome do {endpoint}: ")
@@ -96,7 +110,7 @@ def criar_pokemon(endpoint: str):
     Poke = Pokemon(pokemon_json["name"], tipos, stats)
     gamedata.lista_pokemon.append(Poke)
 
-    gamedata.salvar_json(GameData.lista_pokemon, "pokemons.json", poke_dict)
+    gamedata.salvar_json(GameData.lista_pokemon, "pokemons.json", lambda x:x.to_dict())
 
 def criar_geracao():  #apenas um teste porque ainda nao tenho certeza de como quero fazer a criação dos pokemons, mas por enquanto vou trabalhar apenas com a primeira geração
     """
@@ -122,7 +136,7 @@ def criar_geracao():  #apenas um teste porque ainda nao tenho certeza de como qu
         Poke = Pokemon(pokemon_json["name"], tipos, stats)
         gamedata.lista_pokemon.append(Poke)
 
-        gamedata.salvar(gamedata.lista_pokemon, "pokemons.json", poke_dict)
+        gamedata.salvar(gamedata.lista_pokemon, "pokemons.json", lambda x:x.to_dict())
 
 def criar_item(endpoint: str):
     """
@@ -147,7 +161,7 @@ def criar_item(endpoint: str):
     itens = Item(item_json["name"], item_json["cost"], item_json["category"]["name"], [item["name"] for item in item_json["attributes"]])
     gamedata.lista_items.append(itens)
 
-    gamedata.salvar(gamedata.lista_items, "itens.json", item_dict)
+    gamedata.salvar(gamedata.lista_items, "itens.json", lambda x:x.to_dict())
 
 def criacao():
     """
@@ -175,19 +189,5 @@ def criacao():
         escolha = end_map.get(endpoint, lambda: print("Opção inválida"))
 
         escolha(endpoint)
-
-def poke_dict(obj) -> dict:
-    return{
-        "tipos": obj.tipos,
-        "stats": obj.stats
-    }
-
-def item_dict(obj) -> dict:
-    return{
-        "custo": obj.custo,
-        "categoria": obj.categoria,
-        "atributos": obj.atributos
-    }
-
 
 gamedata = GameData()

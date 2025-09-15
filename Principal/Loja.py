@@ -4,7 +4,11 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import random
 from datetime import datetime, timedelta
 
-from Principal.Main_Menu import Fluxo, MenuState, MainMenu #Importei a variavel hora_atualização só pra teste, mas quero fazer de um jeito mais organizado depois
+from Principal.Main_Menu import Fluxo, MenuState, MainMenu
+
+
+#por enquanto o dinheiro vem por padrão em um valor alto, mas após implementar o sistema de batalha, vai ser iniciado em 0 e sera possivel ganhar derrotando treinadores ou pokemons
+
 
 class ShopMenu(MenuState):
     """Menu da loja
@@ -42,17 +46,17 @@ class ShopMenu(MenuState):
                 item_escolhido = gamedata.estoque[compra]
 
                 if gamedata.dinheiro >= item_escolhido.custo * quantidade:
+                    print(f"Você comprou {quantidade} {item_escolhido.nome}'s, e gastou {item_escolhido.custo * quantidade}")
                     if item_escolhido.nome in gamedata.mochila:
-                        gamedata.mochila[item_escolhido.nome]["quantidade"] += quantidade
+                        gamedata.mochila[item_escolhido.nome].quantidade += quantidade
                     else:
-                        gamedata.mochila[item_escolhido.nome] = {"valor_venda": item_escolhido.custo / 2,
-                                                            "quantidade": quantidade,
-                                                            "categoria": item_escolhido.categoria,
-                                                            "atributos": item_escolhido.atributos}
+                        item_escolhido.quantidade = quantidade
+                        gamedata.mochila[item_escolhido.nome] = item_escolhido
                 
-                gamedata.salvar(gamedata.mochila, "mochila.json", lambda x: x)
-
-                print(f"Você comprou {quantidade} {item_escolhido.nome}, e gastou {item_escolhido.custo * quantidade}")
+                else:
+                    print("Você não tem dinheiro o suficiente pra isso")
+                
+                gamedata.salvar(gamedata.mochila, "mochila.json", lambda x:x.to_dict())
                 break
                     
         elif escolha == "0":

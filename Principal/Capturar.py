@@ -5,11 +5,8 @@ import random
 
 from Principal.Main_Menu import Fluxo, MenuState, MainMenu
 
-
-
 #sistema simples e funcional para capturar pokemons e adiciona-los na pokedex
 #ainda irei implementar level pra poder fazer o sistema de combate e melhora de atributos
-#tambem vou implementar a captura com os outros tipos de pokebola, e uma chance especifica pra cada pokebola
 
 
 class CapturarMenu(MenuState):
@@ -43,71 +40,43 @@ class CapturarMenu(MenuState):
             pokemon_selvagem = random.choice(gamedata.lista_pokemon)
 
             print(f"Um {pokemon_selvagem} apareceu")
-            print("1 - Capturar pokemon")
-            print("2 - Fugir")
-            print("0 - Voltar")
+            print("1 - Capturar pokemon\n" \
+            "2 - Fugir\n" \
+            "0 - Voltar")
             escolha = input("Escolha: ").strip()
 
             if escolha == "1":
-                if self.usar_pokebola(gamedata):
-                    gamedata.pokedex[pokemon_selvagem.nome] = {"nome": pokemon_selvagem.nome,
-                                                               "tipos": pokemon_selvagem.tipos,
-                                                               "stats": pokemon_selvagem.stats,
-                                                               "hp_atual": pokemon_selvagem.hp_atual}
-                    
-                    gamedata.salvar(gamedata.pokedex, "pokedex.json", lambda x: x)
+
+                lista_pokebolas = [
+                                    (item, valor) 
+                                    for item, valor in gamedata.mochila.items()
+                                    if valor.categoria == "standard-balls"
+                                    ]
+
+                if not lista_pokebolas:
+                    print("Você não tem pokebolas")
+                    return
+            
+                for numero, (pokebola, valor) in enumerate(lista_pokebolas, start=1):
+                    print(f"{numero} - {pokebola} | quantidade: {valor.quantidade}")
+
+                escolha_pokebola = int(input("Escolha qual pokebola deseja usar: ")) - 1
+
+                if 0 <= escolha_pokebola < len(lista_pokebolas):
+                    pokebola_escolhida = lista_pokebolas[escolha_pokebola][1]
+                    if pokebola_escolhida.usar_pokebola(gamedata, pokemon_selvagem):
+                        gamedata.pokedex[pokemon_selvagem.nome] = pokemon_selvagem
+                        
+                        gamedata.salvar(gamedata.pokedex, "pokedex.json", lambda x:x.to_dict())
                 
+                    else:
+                        break
+
                 else:
-                    break
+                    print("Escolha uma opção válida")
 
             if escolha == "2":
                 continue
 
             if escolha == "0":
                 break
-
-
-    def usar_pokebola(self, gamedata):
-        """Menu de uso de pokebolas
-    
-          Args: menu: objeto que controla os estados da classe Menu
-          gamedata: objeto que controla todas informações do jogo
-    
-          Returns: Boolean"""
-        lista_pokebolas = [
-            (item, valor["quantidade"]) 
-            for item, valor in gamedata.mochila.items()
-            if valor.get("categoria") == "standard-balls"
-                           ]
-
-        if not lista_pokebolas:
-            print("Você não tem pokebolas")
-            return False
-     
-        for numero, (pokebola, valor) in enumerate(lista_pokebolas, start=1):
-            print(f"{numero} - {pokebola} | quantidade: {valor}")
-
-        escolha = int(input("Escolha qual pokebola deseja usar: ")) - 1
-
-        if 0 <= escolha < len(lista_pokebolas):
-            pokebola_escolhida = lista_pokebolas[escolha][0]
-                
-            atributos = gamedata.mochila.get(pokebola_escolhida)
-            if atributos["quantidade"] > 0:
-                atributos["quantidade"] -= 1
-                print(f"Você usou uma {pokebola_escolhida}")
-                gamedata.salvar(gamedata.mochila, "mochila.json", lambda x: x)
-            
-            else:
-                print(f"Você não tem mais {pokebola_escolhida}")
-                return False
-        
-        else:
-            print("Escolha uma opção válida")
-            return False
-
-        return True
-    
-
-
-#Próximo passo é fazer a chance de captura de cada pokebola

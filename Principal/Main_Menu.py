@@ -53,7 +53,7 @@ class Fluxo:
         self.state = MainMenu()   #Estado inicial
         self.running = True
         self.game_data = GameData()
-        self.hora_atualizacao = datetime.now() + timedelta(seconds=30)
+        self.hora_atualizacao = datetime.now() + timedelta(seconds=0) #Deixei pra loja iniciar com um estoque por padrão para fazer testes mais facilmente, depois volto ao normal
 
     def change_state(self, new_state):
         self.state = new_state

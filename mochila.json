@@ -1,51 +1,26 @@
 {
     "ultra-ball": {
-        "valor_venda": 400.0,
-        "quantidade": 12,
+        "custo": 800,
         "categoria": "standard-balls",
         "atributos": [
             "countable",
             "consumable",
             "usable-in-battle",
             "holdable"
-        ]
+        ],
+        "quantidade": 44,
+        "chance_captura": 50
     },
     "poke-ball": {
-        "valor_venda": 100.0,
-        "quantidade": 8,
+        "custo": 200,
         "categoria": "standard-balls",
         "atributos": [
             "countable",
             "consumable",
             "usable-in-battle",
             "holdable"
-        ]
-    },
-    "pearl": {
-        "valor_venda": 1000.0,
-        "quantidade": 1,
-        "atributos": []
-    },
-    "repeat-ball": {
-        "valor_venda": 500.0,
-        "quantidade": 5,
-        "categoria": "standard-balls",
-        "atributos": [
-            "countable",
-            "consumable",
-            "usable-in-battle",
-            "holdable"
-        ]
-    },
-    "safari-ball": {
-        "valor_venda": 0.0,
-        "quantidade": 0,
-        "categoria": "standard-balls",
-        "atributos": [
-            "countable",
-            "consumable",
-            "usable-in-battle",
-            "holdable"
-        ]
+        ],
+        "quantidade": 42,
+        "chance_captura": 20
     }
 }
