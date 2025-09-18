@@ -25,7 +25,7 @@ class Item:
         
 
 class Pokebola(Item):
-    def __init__(self, nome, custo, categoria, atributos, quantidade, chance_captura=0):
+    def __init__(self, nome, custo, categoria, atributos, quantidade, chance_captura=None):
         super().__init__(nome, custo, categoria, atributos, quantidade)
         self.chance_captura = chance_captura or chance_pokebolas.get(nome, 0.1)
 
@@ -42,10 +42,10 @@ class Pokebola(Item):
     
           Args: menu: objeto que controla os estados da classe Menu
           gamedata: objeto que controla todas informações do jogo
+          pokemon: objeto pokemon com atributos
     
-          Returns: Boolean"""
-        
-        sucesso = random.randint(1,100)
+          Returns: Boolean""" 
+        sucesso =  random.randint(1,100)
 
         if self.quantidade > 0 and sucesso <= self.chance_captura:  
             self.quantidade -= 1

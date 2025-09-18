@@ -1,0 +1,30 @@
+{
+    "magmar": {
+        "tipos": [
+            "fire"
+        ],
+        "stats": {
+            "hp": 65,
+            "attack": 95,
+            "defense": 57,
+            "special-attack": 100,
+            "special-defense": 85,
+            "speed": 93
+        },
+        "hp_atual": 65
+    },
+    "ditto": {
+        "tipos": [
+            "normal"
+        ],
+        "stats": {
+            "hp": 48,
+            "attack": 48,
+            "defense": 48,
+            "special-attack": 48,
+            "special-defense": 48,
+            "speed": 48
+        },
+        "hp_atual": 48
+    }
+}
