@@ -11,13 +11,19 @@ from utils.api import get_pokeapi, get_all_generation, get_move_stats, get_pokea
 class GameData:
     """Classe com todas informações do jogo"""
     def __init__(self):
-        self.lista_pokemon = self.carregar("pokemons.json", Pokemon, ["tipos", "stats"])
+        self.lista_pokemon = self.carregar("pokemons.json", Pokemon, ["tipos", "stats", "lista_ataques"])
         self.lista_items = self.carregar("itens.json", Item, ["custo", "categoria", "atributos", "quantidade"])
         self.lista_ataques = self.carregar("ataques.json", Ataques, ["dano", "precisao", "tipo"])
         self.pokedex = self.carregar("pokedex.json", Pokemon, ["tipos", "stats"])
         self.mochila = self.carregar("mochila.json", Item, ["custo", "categoria", "atributos", "quantidade"])
         self.dinheiro = 1000000
         self.estoque = []
+
+    def get_ataque(self, nome_ataque):
+        for ataque in self.lista_ataques:
+            if ataque.nome == nome_ataque:
+                return ataque
+            return None
 
     @staticmethod
     def carregar(file: str, classe, campos):
@@ -130,13 +136,28 @@ def criar_geracao():  #apenas um teste porque ainda nao tenho certeza de como qu
     for i in geracao1["pokemon_species"]:
         pokemon_json = get_pokeapi(i["name"], "pokemon")
 
-        stats = {stat['stat']['name']: stat['base_stat'] for stat in pokemon_json["stats"] | {"xp": 0}}
-        tipos = [tipo['type']['name'] for tipo in pokemon_json['types']]
+        can_learn = []
 
-        Poke = Pokemon(pokemon_json["name"], tipos, stats)
+        for atk in pokemon_json["moves"]:
+            for detail in atk["version_group_details"]:
+                level_learned_at = detail["level_learned_at"]
+
+            if level_learned_at > 0:
+                obj_ataque = gamedata.get_ataque(atk["move"]["name"])
+                if obj_ataque:
+                    can_learn.append({"ataque": obj_ataque, "level_learned_at": level_learned_at})
+
+        #aqui eu poderia ter feito diretamente a busca na api de ataques, no lugar de criar uma separada e salvar todos os ataques em uma lista separada
+        #mas preferi deixar assim porque tava testando algumas coisas, não sei se vou mudar isso mais pra frente
+
+        stats = {stat['stat']['name']: stat['base_stat'] for stat in pokemon_json["stats"]}
+        tipos = [tipo['type']['name'] for tipo in pokemon_json['types']]
+            
+        Poke = Pokemon(pokemon_json["name"], tipos, stats, can_learn)
         gamedata.lista_pokemon.append(Poke)
 
         gamedata.salvar(gamedata.lista_pokemon, "pokemons.json", lambda x:x.to_dict())
+
 
 def criar_item(endpoint: str):
     """
@@ -220,4 +241,4 @@ def criacao():
 
 gamedata = GameData()
 
-criar_moves()
+criar_geracao()
