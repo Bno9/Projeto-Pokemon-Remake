@@ -1,0 +1,1 @@
+#Aqui tera o menu de batalha com todo o sistema de lutar, ganhar xp, upar de level e ganhar dinheiro

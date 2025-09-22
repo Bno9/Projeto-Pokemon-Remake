@@ -1,0 +1,26 @@
+{
+    "ultra-ball": {
+        "custo": 800,
+        "categoria": "standard-balls",
+        "atributos": [
+            "countable",
+            "consumable",
+            "usable-in-battle",
+            "holdable"
+        ],
+        "quantidade": 29,
+        "chance_captura": 50
+    },
+    "poke-ball": {
+        "custo": 200,
+        "categoria": "standard-balls",
+        "atributos": [
+            "countable",
+            "consumable",
+            "usable-in-battle",
+            "holdable"
+        ],
+        "quantidade": 42,
+        "chance_captura": 20
+    }
+}

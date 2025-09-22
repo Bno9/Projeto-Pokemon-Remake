@@ -11,7 +11,8 @@
             "special-attack": 65,
             "special-defense": 65,
             "speed": 45
-        }
+        },
+        "hp_atual": 45
     },
     "charmander": {
         "tipos": [
@@ -24,7 +25,8 @@
             "special-attack": 60,
             "special-defense": 50,
             "speed": 65
-        }
+        },
+        "hp_atual": 39
     },
     "squirtle": {
         "tipos": [
@@ -37,7 +39,8 @@
             "special-attack": 50,
             "special-defense": 64,
             "speed": 43
-        }
+        },
+        "hp_atual": 44
     },
     "caterpie": {
         "tipos": [
@@ -50,7 +53,8 @@
             "special-attack": 20,
             "special-defense": 20,
             "speed": 45
-        }
+        },
+        "hp_atual": 45
     },
     "weedle": {
         "tipos": [
@@ -64,7 +68,8 @@
             "special-attack": 20,
             "special-defense": 20,
             "speed": 50
-        }
+        },
+        "hp_atual": 40
     },
     "pidgey": {
         "tipos": [
@@ -78,7 +83,8 @@
             "special-attack": 35,
             "special-defense": 35,
             "speed": 56
-        }
+        },
+        "hp_atual": 40
     },
     "rattata": {
         "tipos": [
@@ -91,7 +97,8 @@
             "special-attack": 25,
             "special-defense": 35,
             "speed": 72
-        }
+        },
+        "hp_atual": 30
     },
     "spearow": {
         "tipos": [
@@ -105,7 +112,8 @@
             "special-attack": 31,
             "special-defense": 31,
             "speed": 70
-        }
+        },
+        "hp_atual": 40
     },
     "ekans": {
         "tipos": [
@@ -118,7 +126,8 @@
             "special-attack": 40,
             "special-defense": 54,
             "speed": 55
-        }
+        },
+        "hp_atual": 35
     },
     "sandshrew": {
         "tipos": [
@@ -131,7 +140,8 @@
             "special-attack": 20,
             "special-defense": 30,
             "speed": 40
-        }
+        },
+        "hp_atual": 50
     },
     "nidoran-f": {
         "tipos": [
@@ -144,7 +154,8 @@
             "special-attack": 40,
             "special-defense": 40,
             "speed": 41
-        }
+        },
+        "hp_atual": 55
     },
     "nidoran-m": {
         "tipos": [
@@ -157,7 +168,8 @@
             "special-attack": 40,
             "special-defense": 40,
             "speed": 50
-        }
+        },
+        "hp_atual": 46
     },
     "vulpix": {
         "tipos": [
@@ -170,7 +182,8 @@
             "special-attack": 50,
             "special-defense": 65,
             "speed": 65
-        }
+        },
+        "hp_atual": 38
     },
     "zubat": {
         "tipos": [
@@ -184,7 +197,8 @@
             "special-attack": 30,
             "special-defense": 40,
             "speed": 55
-        }
+        },
+        "hp_atual": 40
     },
     "oddish": {
         "tipos": [
@@ -198,7 +212,8 @@
             "special-attack": 75,
             "special-defense": 65,
             "speed": 30
-        }
+        },
+        "hp_atual": 45
     },
     "paras": {
         "tipos": [
@@ -212,7 +227,8 @@
             "special-attack": 45,
             "special-defense": 55,
             "speed": 25
-        }
+        },
+        "hp_atual": 35
     },
     "venonat": {
         "tipos": [
@@ -226,7 +242,8 @@
             "special-attack": 40,
             "special-defense": 55,
             "speed": 45
-        }
+        },
+        "hp_atual": 60
     },
     "diglett": {
         "tipos": [
@@ -239,7 +256,8 @@
             "special-attack": 35,
             "special-defense": 45,
             "speed": 95
-        }
+        },
+        "hp_atual": 10
     },
     "meowth": {
         "tipos": [
@@ -252,7 +270,8 @@
             "special-attack": 40,
             "special-defense": 40,
             "speed": 90
-        }
+        },
+        "hp_atual": 40
     },
     "psyduck": {
         "tipos": [
@@ -265,7 +284,8 @@
             "special-attack": 65,
             "special-defense": 50,
             "speed": 55
-        }
+        },
+        "hp_atual": 50
     },
     "mankey": {
         "tipos": [
@@ -278,7 +298,8 @@
             "special-attack": 35,
             "special-defense": 45,
             "speed": 70
-        }
+        },
+        "hp_atual": 40
     },
     "growlithe": {
         "tipos": [
@@ -291,7 +312,8 @@
             "special-attack": 70,
             "special-defense": 50,
             "speed": 60
-        }
+        },
+        "hp_atual": 55
     },
     "poliwag": {
         "tipos": [
@@ -304,7 +326,8 @@
             "special-attack": 40,
             "special-defense": 40,
             "speed": 90
-        }
+        },
+        "hp_atual": 40
     },
     "abra": {
         "tipos": [
@@ -317,7 +340,8 @@
             "special-attack": 105,
             "special-defense": 55,
             "speed": 90
-        }
+        },
+        "hp_atual": 25
     },
     "machop": {
         "tipos": [
@@ -330,7 +354,8 @@
             "special-attack": 35,
             "special-defense": 35,
             "speed": 35
-        }
+        },
+        "hp_atual": 70
     },
     "bellsprout": {
         "tipos": [
@@ -344,7 +369,8 @@
             "special-attack": 70,
             "special-defense": 30,
             "speed": 40
-        }
+        },
+        "hp_atual": 50
     },
     "tentacool": {
         "tipos": [
@@ -358,7 +384,8 @@
             "special-attack": 50,
             "special-defense": 100,
             "speed": 70
-        }
+        },
+        "hp_atual": 40
     },
     "geodude": {
         "tipos": [
@@ -372,7 +399,8 @@
             "special-attack": 30,
             "special-defense": 30,
             "speed": 20
-        }
+        },
+        "hp_atual": 40
     },
     "venusaur": {
         "tipos": [
@@ -386,7 +414,8 @@
             "special-attack": 100,
             "special-defense": 100,
             "speed": 80
-        }
+        },
+        "hp_atual": 80
     },
     "charmeleon": {
         "tipos": [
@@ -399,7 +428,8 @@
             "special-attack": 80,
             "special-defense": 65,
             "speed": 80
-        }
+        },
+        "hp_atual": 58
     },
     "charizard": {
         "tipos": [
@@ -413,7 +443,8 @@
             "special-attack": 109,
             "special-defense": 85,
             "speed": 100
-        }
+        },
+        "hp_atual": 78
     },
     "wartortle": {
         "tipos": [
@@ -426,7 +457,8 @@
             "special-attack": 65,
             "special-defense": 80,
             "speed": 58
-        }
+        },
+        "hp_atual": 59
     },
     "blastoise": {
         "tipos": [
@@ -439,7 +471,8 @@
             "special-attack": 85,
             "special-defense": 105,
             "speed": 78
-        }
+        },
+        "hp_atual": 79
     },
     "metapod": {
         "tipos": [
@@ -452,7 +485,8 @@
             "special-attack": 25,
             "special-defense": 25,
             "speed": 30
-        }
+        },
+        "hp_atual": 50
     },
     "butterfree": {
         "tipos": [
@@ -466,7 +500,8 @@
             "special-attack": 90,
             "special-defense": 80,
             "speed": 70
-        }
+        },
+        "hp_atual": 60
     },
     "kakuna": {
         "tipos": [
@@ -480,7 +515,8 @@
             "special-attack": 25,
             "special-defense": 25,
             "speed": 35
-        }
+        },
+        "hp_atual": 45
     },
     "beedrill": {
         "tipos": [
@@ -494,7 +530,8 @@
             "special-attack": 45,
             "special-defense": 80,
             "speed": 75
-        }
+        },
+        "hp_atual": 65
     },
     "pidgeotto": {
         "tipos": [
@@ -508,7 +545,8 @@
             "special-attack": 50,
             "special-defense": 50,
             "speed": 71
-        }
+        },
+        "hp_atual": 63
     },
     "pidgeot": {
         "tipos": [
@@ -522,7 +560,8 @@
             "special-attack": 70,
             "special-defense": 70,
             "speed": 101
-        }
+        },
+        "hp_atual": 83
     },
     "raticate": {
         "tipos": [
@@ -535,7 +574,8 @@
             "special-attack": 50,
             "special-defense": 70,
             "speed": 97
-        }
+        },
+        "hp_atual": 55
     },
     "fearow": {
         "tipos": [
@@ -549,7 +589,8 @@
             "special-attack": 61,
             "special-defense": 61,
             "speed": 100
-        }
+        },
+        "hp_atual": 65
     },
     "arbok": {
         "tipos": [
@@ -562,7 +603,8 @@
             "special-attack": 65,
             "special-defense": 79,
             "speed": 80
-        }
+        },
+        "hp_atual": 60
     },
     "pikachu": {
         "tipos": [
@@ -575,7 +617,8 @@
             "special-attack": 50,
             "special-defense": 50,
             "speed": 90
-        }
+        },
+        "hp_atual": 35
     },
     "raichu": {
         "tipos": [
@@ -588,7 +631,8 @@
             "special-attack": 90,
             "special-defense": 80,
             "speed": 110
-        }
+        },
+        "hp_atual": 60
     },
     "sandslash": {
         "tipos": [
@@ -601,7 +645,8 @@
             "special-attack": 45,
             "special-defense": 55,
             "speed": 65
-        }
+        },
+        "hp_atual": 75
     },
     "nidorina": {
         "tipos": [
@@ -614,7 +659,8 @@
             "special-attack": 55,
             "special-defense": 55,
             "speed": 56
-        }
+        },
+        "hp_atual": 70
     },
     "nidoqueen": {
         "tipos": [
@@ -628,7 +674,8 @@
             "special-attack": 75,
             "special-defense": 85,
             "speed": 76
-        }
+        },
+        "hp_atual": 90
     },
     "nidorino": {
         "tipos": [
@@ -641,7 +688,8 @@
             "special-attack": 55,
             "special-defense": 55,
             "speed": 65
-        }
+        },
+        "hp_atual": 61
     },
     "nidoking": {
         "tipos": [
@@ -655,7 +703,8 @@
             "special-attack": 85,
             "special-defense": 75,
             "speed": 85
-        }
+        },
+        "hp_atual": 81
     },
     "clefairy": {
         "tipos": [
@@ -668,7 +717,8 @@
             "special-attack": 60,
             "special-defense": 65,
             "speed": 35
-        }
+        },
+        "hp_atual": 70
     },
     "clefable": {
         "tipos": [
@@ -681,7 +731,8 @@
             "special-attack": 95,
             "special-defense": 90,
             "speed": 60
-        }
+        },
+        "hp_atual": 95
     },
     "ninetales": {
         "tipos": [
@@ -694,7 +745,8 @@
             "special-attack": 81,
             "special-defense": 100,
             "speed": 100
-        }
+        },
+        "hp_atual": 73
     },
     "jigglypuff": {
         "tipos": [
@@ -708,7 +760,8 @@
             "special-attack": 45,
             "special-defense": 25,
             "speed": 20
-        }
+        },
+        "hp_atual": 115
     },
     "wigglytuff": {
         "tipos": [
@@ -722,7 +775,8 @@
             "special-attack": 85,
             "special-defense": 50,
             "speed": 45
-        }
+        },
+        "hp_atual": 140
     },
     "golbat": {
         "tipos": [
@@ -736,7 +790,8 @@
             "special-attack": 65,
             "special-defense": 75,
             "speed": 90
-        }
+        },
+        "hp_atual": 75
     },
     "gloom": {
         "tipos": [
@@ -750,7 +805,8 @@
             "special-attack": 85,
             "special-defense": 75,
             "speed": 40
-        }
+        },
+        "hp_atual": 60
     },
     "vileplume": {
         "tipos": [
@@ -764,7 +820,8 @@
             "special-attack": 110,
             "special-defense": 90,
             "speed": 50
-        }
+        },
+        "hp_atual": 75
     },
     "parasect": {
         "tipos": [
@@ -778,7 +835,8 @@
             "special-attack": 60,
             "special-defense": 80,
             "speed": 30
-        }
+        },
+        "hp_atual": 60
     },
     "venomoth": {
         "tipos": [
@@ -792,7 +850,8 @@
             "special-attack": 90,
             "special-defense": 75,
             "speed": 90
-        }
+        },
+        "hp_atual": 70
     },
     "dugtrio": {
         "tipos": [
@@ -805,7 +864,8 @@
             "special-attack": 50,
             "special-defense": 70,
             "speed": 120
-        }
+        },
+        "hp_atual": 35
     },
     "persian": {
         "tipos": [
@@ -818,7 +878,8 @@
             "special-attack": 65,
             "special-defense": 65,
             "speed": 115
-        }
+        },
+        "hp_atual": 65
     },
     "golduck": {
         "tipos": [
@@ -831,7 +892,8 @@
             "special-attack": 95,
             "special-defense": 80,
             "speed": 85
-        }
+        },
+        "hp_atual": 80
     },
     "primeape": {
         "tipos": [
@@ -844,7 +906,8 @@
             "special-attack": 60,
             "special-defense": 70,
             "speed": 95
-        }
+        },
+        "hp_atual": 65
     },
     "arcanine": {
         "tipos": [
@@ -857,7 +920,8 @@
             "special-attack": 100,
             "special-defense": 80,
             "speed": 95
-        }
+        },
+        "hp_atual": 90
     },
     "poliwhirl": {
         "tipos": [
@@ -870,7 +934,8 @@
             "special-attack": 50,
             "special-defense": 50,
             "speed": 90
-        }
+        },
+        "hp_atual": 65
     },
     "poliwrath": {
         "tipos": [
@@ -884,7 +949,8 @@
             "special-attack": 70,
             "special-defense": 90,
             "speed": 70
-        }
+        },
+        "hp_atual": 90
     },
     "kadabra": {
         "tipos": [
@@ -897,7 +963,8 @@
             "special-attack": 120,
             "special-defense": 70,
             "speed": 105
-        }
+        },
+        "hp_atual": 40
     },
     "alakazam": {
         "tipos": [
@@ -910,7 +977,8 @@
             "special-attack": 135,
             "special-defense": 95,
             "speed": 120
-        }
+        },
+        "hp_atual": 55
     },
     "machoke": {
         "tipos": [
@@ -923,7 +991,8 @@
             "special-attack": 50,
             "special-defense": 60,
             "speed": 45
-        }
+        },
+        "hp_atual": 80
     },
     "machamp": {
         "tipos": [
@@ -936,7 +1005,8 @@
             "special-attack": 65,
             "special-defense": 85,
             "speed": 55
-        }
+        },
+        "hp_atual": 90
     },
     "weepinbell": {
         "tipos": [
@@ -950,7 +1020,8 @@
             "special-attack": 85,
             "special-defense": 45,
             "speed": 55
-        }
+        },
+        "hp_atual": 65
     },
     "victreebel": {
         "tipos": [
@@ -964,7 +1035,8 @@
             "special-attack": 100,
             "special-defense": 70,
             "speed": 70
-        }
+        },
+        "hp_atual": 80
     },
     "tentacruel": {
         "tipos": [
@@ -978,7 +1050,8 @@
             "special-attack": 80,
             "special-defense": 120,
             "speed": 100
-        }
+        },
+        "hp_atual": 80
     },
     "graveler": {
         "tipos": [
@@ -992,7 +1065,8 @@
             "special-attack": 45,
             "special-defense": 45,
             "speed": 35
-        }
+        },
+        "hp_atual": 55
     },
     "ponyta": {
         "tipos": [
@@ -1005,7 +1079,8 @@
             "special-attack": 65,
             "special-defense": 65,
             "speed": 90
-        }
+        },
+        "hp_atual": 50
     },
     "slowpoke": {
         "tipos": [
@@ -1019,7 +1094,8 @@
             "special-attack": 40,
             "special-defense": 40,
             "speed": 15
-        }
+        },
+        "hp_atual": 90
     },
     "magnemite": {
         "tipos": [
@@ -1033,7 +1109,8 @@
             "special-attack": 95,
             "special-defense": 55,
             "speed": 45
-        }
+        },
+        "hp_atual": 25
     },
     "farfetchd": {
         "tipos": [
@@ -1047,7 +1124,8 @@
             "special-attack": 58,
             "special-defense": 62,
             "speed": 60
-        }
+        },
+        "hp_atual": 52
     },
     "doduo": {
         "tipos": [
@@ -1061,7 +1139,8 @@
             "special-attack": 35,
             "special-defense": 35,
             "speed": 75
-        }
+        },
+        "hp_atual": 35
     },
     "seel": {
         "tipos": [
@@ -1074,7 +1153,8 @@
             "special-attack": 45,
             "special-defense": 70,
             "speed": 45
-        }
+        },
+        "hp_atual": 65
     },
     "grimer": {
         "tipos": [
@@ -1087,7 +1167,8 @@
             "special-attack": 40,
             "special-defense": 50,
             "speed": 25
-        }
+        },
+        "hp_atual": 80
     },
     "shellder": {
         "tipos": [
@@ -1100,7 +1181,8 @@
             "special-attack": 45,
             "special-defense": 25,
             "speed": 40
-        }
+        },
+        "hp_atual": 30
     },
     "gastly": {
         "tipos": [
@@ -1114,7 +1196,8 @@
             "special-attack": 100,
             "special-defense": 35,
             "speed": 80
-        }
+        },
+        "hp_atual": 30
     },
     "onix": {
         "tipos": [
@@ -1128,7 +1211,8 @@
             "special-attack": 30,
             "special-defense": 45,
             "speed": 70
-        }
+        },
+        "hp_atual": 35
     },
     "drowzee": {
         "tipos": [
@@ -1141,7 +1225,8 @@
             "special-attack": 43,
             "special-defense": 90,
             "speed": 42
-        }
+        },
+        "hp_atual": 60
     },
     "krabby": {
         "tipos": [
@@ -1154,7 +1239,8 @@
             "special-attack": 25,
             "special-defense": 25,
             "speed": 50
-        }
+        },
+        "hp_atual": 30
     },
     "voltorb": {
         "tipos": [
@@ -1167,7 +1253,8 @@
             "special-attack": 55,
             "special-defense": 55,
             "speed": 100
-        }
+        },
+        "hp_atual": 40
     },
     "exeggcute": {
         "tipos": [
@@ -1181,7 +1268,8 @@
             "special-attack": 60,
             "special-defense": 45,
             "speed": 40
-        }
+        },
+        "hp_atual": 60
     },
     "cubone": {
         "tipos": [
@@ -1194,7 +1282,8 @@
             "special-attack": 40,
             "special-defense": 50,
             "speed": 35
-        }
+        },
+        "hp_atual": 50
     },
     "lickitung": {
         "tipos": [
@@ -1207,7 +1296,8 @@
             "special-attack": 60,
             "special-defense": 75,
             "speed": 30
-        }
+        },
+        "hp_atual": 90
     },
     "koffing": {
         "tipos": [
@@ -1220,7 +1310,8 @@
             "special-attack": 60,
             "special-defense": 45,
             "speed": 35
-        }
+        },
+        "hp_atual": 40
     },
     "rhyhorn": {
         "tipos": [
@@ -1234,7 +1325,8 @@
             "special-attack": 30,
             "special-defense": 30,
             "speed": 25
-        }
+        },
+        "hp_atual": 80
     },
     "tangela": {
         "tipos": [
@@ -1247,7 +1339,8 @@
             "special-attack": 100,
             "special-defense": 40,
             "speed": 60
-        }
+        },
+        "hp_atual": 65
     },
     "kangaskhan": {
         "tipos": [
@@ -1260,7 +1353,8 @@
             "special-attack": 40,
             "special-defense": 80,
             "speed": 90
-        }
+        },
+        "hp_atual": 105
     },
     "horsea": {
         "tipos": [
@@ -1273,7 +1367,8 @@
             "special-attack": 70,
             "special-defense": 25,
             "speed": 60
-        }
+        },
+        "hp_atual": 30
     },
     "goldeen": {
         "tipos": [
@@ -1286,7 +1381,8 @@
             "special-attack": 35,
             "special-defense": 50,
             "speed": 63
-        }
+        },
+        "hp_atual": 45
     },
     "staryu": {
         "tipos": [
@@ -1299,7 +1395,8 @@
             "special-attack": 70,
             "special-defense": 55,
             "speed": 85
-        }
+        },
+        "hp_atual": 30
     },
     "scyther": {
         "tipos": [
@@ -1313,7 +1410,8 @@
             "special-attack": 55,
             "special-defense": 80,
             "speed": 105
-        }
+        },
+        "hp_atual": 70
     },
     "pinsir": {
         "tipos": [
@@ -1326,7 +1424,8 @@
             "special-attack": 55,
             "special-defense": 70,
             "speed": 85
-        }
+        },
+        "hp_atual": 65
     },
     "tauros": {
         "tipos": [
@@ -1339,7 +1438,8 @@
             "special-attack": 40,
             "special-defense": 70,
             "speed": 110
-        }
+        },
+        "hp_atual": 75
     },
     "magikarp": {
         "tipos": [
@@ -1352,7 +1452,8 @@
             "special-attack": 15,
             "special-defense": 20,
             "speed": 80
-        }
+        },
+        "hp_atual": 20
     },
     "lapras": {
         "tipos": [
@@ -1366,7 +1467,8 @@
             "special-attack": 85,
             "special-defense": 95,
             "speed": 60
-        }
+        },
+        "hp_atual": 130
     },
     "ditto": {
         "tipos": [
@@ -1379,7 +1481,8 @@
             "special-attack": 48,
             "special-defense": 48,
             "speed": 48
-        }
+        },
+        "hp_atual": 48
     },
     "eevee": {
         "tipos": [
@@ -1392,7 +1495,8 @@
             "special-attack": 45,
             "special-defense": 65,
             "speed": 55
-        }
+        },
+        "hp_atual": 55
     },
     "porygon": {
         "tipos": [
@@ -1405,7 +1509,8 @@
             "special-attack": 85,
             "special-defense": 75,
             "speed": 40
-        }
+        },
+        "hp_atual": 65
     },
     "omanyte": {
         "tipos": [
@@ -1419,7 +1524,8 @@
             "special-attack": 90,
             "special-defense": 55,
             "speed": 35
-        }
+        },
+        "hp_atual": 35
     },
     "kabuto": {
         "tipos": [
@@ -1433,7 +1539,8 @@
             "special-attack": 55,
             "special-defense": 45,
             "speed": 55
-        }
+        },
+        "hp_atual": 30
     },
     "aerodactyl": {
         "tipos": [
@@ -1447,7 +1554,8 @@
             "special-attack": 60,
             "special-defense": 75,
             "speed": 130
-        }
+        },
+        "hp_atual": 80
     },
     "articuno": {
         "tipos": [
@@ -1461,7 +1569,8 @@
             "special-attack": 95,
             "special-defense": 125,
             "speed": 85
-        }
+        },
+        "hp_atual": 90
     },
     "zapdos": {
         "tipos": [
@@ -1475,7 +1584,8 @@
             "special-attack": 125,
             "special-defense": 90,
             "speed": 100
-        }
+        },
+        "hp_atual": 90
     },
     "moltres": {
         "tipos": [
@@ -1489,7 +1599,8 @@
             "special-attack": 125,
             "special-defense": 85,
             "speed": 90
-        }
+        },
+        "hp_atual": 90
     },
     "dratini": {
         "tipos": [
@@ -1502,7 +1613,8 @@
             "special-attack": 50,
             "special-defense": 50,
             "speed": 50
-        }
+        },
+        "hp_atual": 41
     },
     "mewtwo": {
         "tipos": [
@@ -1515,7 +1627,8 @@
             "special-attack": 154,
             "special-defense": 90,
             "speed": 130
-        }
+        },
+        "hp_atual": 106
     },
     "rapidash": {
         "tipos": [
@@ -1528,7 +1641,8 @@
             "special-attack": 80,
             "special-defense": 80,
             "speed": 105
-        }
+        },
+        "hp_atual": 65
     },
     "slowbro": {
         "tipos": [
@@ -1542,7 +1656,8 @@
             "special-attack": 100,
             "special-defense": 80,
             "speed": 30
-        }
+        },
+        "hp_atual": 95
     },
     "magneton": {
         "tipos": [
@@ -1556,7 +1671,8 @@
             "special-attack": 120,
             "special-defense": 70,
             "speed": 70
-        }
+        },
+        "hp_atual": 50
     },
     "dodrio": {
         "tipos": [
@@ -1570,7 +1686,8 @@
             "special-attack": 60,
             "special-defense": 60,
             "speed": 110
-        }
+        },
+        "hp_atual": 60
     },
     "dewgong": {
         "tipos": [
@@ -1584,7 +1701,8 @@
             "special-attack": 70,
             "special-defense": 95,
             "speed": 70
-        }
+        },
+        "hp_atual": 90
     },
     "muk": {
         "tipos": [
@@ -1597,7 +1715,8 @@
             "special-attack": 65,
             "special-defense": 100,
             "speed": 50
-        }
+        },
+        "hp_atual": 105
     },
     "cloyster": {
         "tipos": [
@@ -1611,7 +1730,8 @@
             "special-attack": 85,
             "special-defense": 45,
             "speed": 70
-        }
+        },
+        "hp_atual": 50
     },
     "haunter": {
         "tipos": [
@@ -1625,7 +1745,8 @@
             "special-attack": 115,
             "special-defense": 55,
             "speed": 95
-        }
+        },
+        "hp_atual": 45
     },
     "gengar": {
         "tipos": [
@@ -1639,7 +1760,8 @@
             "special-attack": 130,
             "special-defense": 75,
             "speed": 110
-        }
+        },
+        "hp_atual": 60
     },
     "hypno": {
         "tipos": [
@@ -1652,7 +1774,8 @@
             "special-attack": 73,
             "special-defense": 115,
             "speed": 67
-        }
+        },
+        "hp_atual": 85
     },
     "kingler": {
         "tipos": [
@@ -1665,7 +1788,8 @@
             "special-attack": 50,
             "special-defense": 50,
             "speed": 75
-        }
+        },
+        "hp_atual": 55
     },
     "electrode": {
         "tipos": [
@@ -1678,7 +1802,8 @@
             "special-attack": 80,
             "special-defense": 80,
             "speed": 150
-        }
+        },
+        "hp_atual": 60
     },
     "exeggutor": {
         "tipos": [
@@ -1692,7 +1817,8 @@
             "special-attack": 125,
             "special-defense": 75,
             "speed": 55
-        }
+        },
+        "hp_atual": 95
     },
     "marowak": {
         "tipos": [
@@ -1705,7 +1831,8 @@
             "special-attack": 50,
             "special-defense": 80,
             "speed": 45
-        }
+        },
+        "hp_atual": 60
     },
     "hitmonlee": {
         "tipos": [
@@ -1718,7 +1845,8 @@
             "special-attack": 35,
             "special-defense": 110,
             "speed": 87
-        }
+        },
+        "hp_atual": 50
     },
     "hitmonchan": {
         "tipos": [
@@ -1731,7 +1859,8 @@
             "special-attack": 35,
             "special-defense": 110,
             "speed": 76
-        }
+        },
+        "hp_atual": 50
     },
     "weezing": {
         "tipos": [
@@ -1744,7 +1873,8 @@
             "special-attack": 85,
             "special-defense": 70,
             "speed": 60
-        }
+        },
+        "hp_atual": 65
     },
     "rhydon": {
         "tipos": [
@@ -1758,7 +1888,8 @@
             "special-attack": 45,
             "special-defense": 45,
             "speed": 40
-        }
+        },
+        "hp_atual": 105
     },
     "chansey": {
         "tipos": [
@@ -1771,7 +1902,8 @@
             "special-attack": 35,
             "special-defense": 105,
             "speed": 50
-        }
+        },
+        "hp_atual": 250
     },
     "seadra": {
         "tipos": [
@@ -1784,7 +1916,8 @@
             "special-attack": 95,
             "special-defense": 45,
             "speed": 85
-        }
+        },
+        "hp_atual": 55
     },
     "seaking": {
         "tipos": [
@@ -1797,7 +1930,8 @@
             "special-attack": 65,
             "special-defense": 80,
             "speed": 68
-        }
+        },
+        "hp_atual": 80
     },
     "starmie": {
         "tipos": [
@@ -1811,7 +1945,8 @@
             "special-attack": 100,
             "special-defense": 85,
             "speed": 115
-        }
+        },
+        "hp_atual": 60
     },
     "mr-mime": {
         "tipos": [
@@ -1825,7 +1960,8 @@
             "special-attack": 100,
             "special-defense": 120,
             "speed": 90
-        }
+        },
+        "hp_atual": 40
     },
     "jynx": {
         "tipos": [
@@ -1839,7 +1975,8 @@
             "special-attack": 115,
             "special-defense": 95,
             "speed": 95
-        }
+        },
+        "hp_atual": 65
     },
     "electabuzz": {
         "tipos": [
@@ -1852,7 +1989,8 @@
             "special-attack": 95,
             "special-defense": 85,
             "speed": 105
-        }
+        },
+        "hp_atual": 65
     },
     "magmar": {
         "tipos": [
@@ -1865,7 +2003,8 @@
             "special-attack": 100,
             "special-defense": 85,
             "speed": 93
-        }
+        },
+        "hp_atual": 65
     },
     "gyarados": {
         "tipos": [
@@ -1879,7 +2018,8 @@
             "special-attack": 60,
             "special-defense": 100,
             "speed": 81
-        }
+        },
+        "hp_atual": 95
     },
     "vaporeon": {
         "tipos": [
@@ -1892,7 +2032,8 @@
             "special-attack": 110,
             "special-defense": 95,
             "speed": 65
-        }
+        },
+        "hp_atual": 130
     },
     "jolteon": {
         "tipos": [
@@ -1905,7 +2046,8 @@
             "special-attack": 110,
             "special-defense": 95,
             "speed": 130
-        }
+        },
+        "hp_atual": 65
     },
     "flareon": {
         "tipos": [
@@ -1918,7 +2060,8 @@
             "special-attack": 95,
             "special-defense": 110,
             "speed": 65
-        }
+        },
+        "hp_atual": 65
     },
     "omastar": {
         "tipos": [
@@ -1932,7 +2075,8 @@
             "special-attack": 115,
             "special-defense": 70,
             "speed": 55
-        }
+        },
+        "hp_atual": 70
     },
     "kabutops": {
         "tipos": [
@@ -1946,7 +2090,8 @@
             "special-attack": 65,
             "special-defense": 70,
             "speed": 80
-        }
+        },
+        "hp_atual": 60
     },
     "snorlax": {
         "tipos": [
@@ -1959,7 +2104,8 @@
             "special-attack": 65,
             "special-defense": 110,
             "speed": 30
-        }
+        },
+        "hp_atual": 160
     },
     "dragonair": {
         "tipos": [
@@ -1972,7 +2118,8 @@
             "special-attack": 70,
             "special-defense": 70,
             "speed": 70
-        }
+        },
+        "hp_atual": 61
     },
     "dragonite": {
         "tipos": [
@@ -1986,7 +2133,8 @@
             "special-attack": 100,
             "special-defense": 100,
             "speed": 80
-        }
+        },
+        "hp_atual": 91
     },
     "mew": {
         "tipos": [
@@ -1999,7 +2147,8 @@
             "special-attack": 100,
             "special-defense": 100,
             "speed": 100
-        }
+        },
+        "hp_atual": 100
     },
     "ivysaur": {
         "tipos": [
@@ -2013,7 +2162,8 @@
             "special-attack": 80,
             "special-defense": 80,
             "speed": 60
-        }
+        },
+        "hp_atual": 60
     },
     "golem": {
         "tipos": [
@@ -2027,6 +2177,7 @@
             "special-attack": 55,
             "special-defense": 65,
             "speed": 45
-        }
+        },
+        "hp_atual": 80
     }
 }
