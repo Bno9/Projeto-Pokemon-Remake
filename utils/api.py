@@ -88,7 +88,7 @@ def get_pokeapi_move():
         dict: Json da pokeapi
     """
 
-    url = f"{BASE_URL}/move?limit=1000"
+    url = f"{BASE_URL}/generation/1/"
     response = requests.get(url)
 
     if response.status_code != 200:

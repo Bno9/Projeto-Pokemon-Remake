@@ -27,6 +27,7 @@ class MainMenu(MenuState):
         print("1 - Capturar Pokemons")
         print("2 - Loja")
         print("3 - Pokédex")
+        print("4 - Lutar")
         print("0 - Sair")
         escolha = input("Escolha: ").strip()
 
@@ -38,6 +39,9 @@ class MainMenu(MenuState):
             menu.change_state(ShopMenu())
         elif escolha == "3":
             menu.change_state(PokedexMenu())
+        elif escolha == "3":
+            from batalha.Luta import BatalhaMenu
+            menu.change_state(BatalhaMenu())
         elif escolha == "0":
             menu.running = False
         else:
@@ -53,7 +57,7 @@ class Fluxo:
         self.state = MainMenu()   #Estado inicial
         self.running = True
         self.game_data = GameData()
-        self.hora_atualizacao = datetime.now() + timedelta(seconds=0) #Deixei pra loja iniciar com um estoque por padrão para fazer testes mais facilmente, depois volto ao normal
+        self.hora_atualizacao = datetime.now() + timedelta(seconds=30)
 
     def change_state(self, new_state):
         self.state = new_state

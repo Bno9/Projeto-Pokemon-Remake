@@ -23,7 +23,7 @@ class GameData:
         for ataque in self.lista_ataques:
             if ataque.nome == nome_ataque:
                 return ataque
-            return None
+        return None
 
     @staticmethod
     def carregar(file: str, classe, campos):
@@ -142,16 +142,18 @@ def criar_geracao():  #apenas um teste porque ainda nao tenho certeza de como qu
             for detail in atk["version_group_details"]:
                 level_learned_at = detail["level_learned_at"]
 
-            if level_learned_at > 0:
-                obj_ataque = gamedata.get_ataque(atk["move"]["name"])
-                if obj_ataque:
-                    can_learn.append({"ataque": obj_ataque, "level_learned_at": level_learned_at})
+                if level_learned_at > 0:
+                    obj_ataque = gamedata.get_ataque(atk["move"]["name"])
+                    if obj_ataque:
+                        can_learn.append({"ataque": obj_ataque, "level_learned_at": level_learned_at})
 
         #aqui eu poderia ter feito diretamente a busca na api de ataques, no lugar de criar uma separada e salvar todos os ataques em uma lista separada
         #mas preferi deixar assim porque tava testando algumas coisas, não sei se vou mudar isso mais pra frente
 
         stats = {stat['stat']['name']: stat['base_stat'] for stat in pokemon_json["stats"]}
         tipos = [tipo['type']['name'] for tipo in pokemon_json['types']]
+
+        #print(i["name"], can_learn) #Aqui tem um problema, porque nem todos pokemons estão ganhando uma lista de ataques.
             
         Poke = Pokemon(pokemon_json["name"], tipos, stats, can_learn)
         gamedata.lista_pokemon.append(Poke)
@@ -196,7 +198,7 @@ def criar_moves():
     """
     ataque_json = get_pokeapi_move()
 
-    for move_data in ataque_json["results"]:
+    for move_data in ataque_json["moves"]:
         ataque_stats = get_move_stats(move_data["url"])
 
         obj_ataque = Ataques(move_data["name"], ataque_stats.get("damage", 0), ataque_stats["accuracy"], ataque_stats["damage_class"]["name"])
@@ -241,4 +243,4 @@ def criacao():
 
 gamedata = GameData()
 
-criar_geracao()
+#criar_geracao()

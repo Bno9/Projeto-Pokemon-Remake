@@ -14,9 +14,10 @@ class Pokemon:
         self.inicializar_ataques()
 
     def inicializar_ataques(self):
-        for ataque in self.can_learn:
-            if ataque["level_earned_at"] == 1:
-                self.ataques.append(ataque)
+        if self.can_learn:
+            for ataque in self.can_learn:
+                if ataque["level_learned_at"] == 1 and len(self.ataques) < 2:
+                    self.ataques.append(ataque)
 
     def to_dict(self):
         return {
