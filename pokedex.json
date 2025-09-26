@@ -1,0 +1,59 @@
+{
+    "flareon": {
+        "tipos": [
+            "fire"
+        ],
+        "stats": {
+            "hp": 65,
+            "attack": 130,
+            "defense": 60,
+            "special-attack": 95,
+            "special-defense": 110,
+            "speed": 65
+        },
+        "hp_atual": 65
+    },
+    "pidgey": {
+        "tipos": [
+            "normal",
+            "flying"
+        ],
+        "stats": {
+            "hp": 40,
+            "attack": 45,
+            "defense": 40,
+            "special-attack": 35,
+            "special-defense": 35,
+            "speed": 56
+        },
+        "hp_atual": 40
+    },
+    "weezing": {
+        "tipos": [
+            "poison"
+        ],
+        "stats": {
+            "hp": 65,
+            "attack": 90,
+            "defense": 120,
+            "special-attack": 85,
+            "special-defense": 70,
+            "speed": 60
+        },
+        "hp_atual": 65
+    },
+    "rapidash": {
+        "tipos": [
+            "fire"
+        ],
+        "stats": {
+            "hp": 65,
+            "attack": 100,
+            "defense": 70,
+            "special-attack": 80,
+            "special-defense": 80,
+            "speed": 105
+        },
+        "hp_atual": 65
+    }
+}

@@ -65,7 +65,7 @@ class CapturarMenu(MenuState):
                 if 0 <= escolha_pokebola < len(lista_pokebolas):
                     pokebola_escolhida = lista_pokebolas[escolha_pokebola][1]
                     if pokebola_escolhida.usar_pokebola(gamedata, pokemon_selvagem):
-                        gamedata.pokedex[pokemon_selvagem.nome] = pokemon_selvagem
+                        gamedata.pokedex.append(pokemon_selvagem)
                         
                         gamedata.salvar(gamedata.pokedex, "pokedex.json", lambda x:x.to_dict())
                 

@@ -54,7 +54,7 @@ class GameData:
                     args = [item] + [valor.get(campo, None) for campo in campos]
                     obj = subclasse(*args)
                     
-                    if file in ["mochila.json", "pokedex.json"]:
+                    if file in ["mochila.json"]:
                         dicionario[obj.nome] = obj
                     else:
                         lista.append(obj)
@@ -62,7 +62,7 @@ class GameData:
         except (json.JSONDecodeError, FileNotFoundError):
             pass
 
-        return dicionario if file in ["mochila.json", "pokedex.json"] else lista
+        return dicionario if file in ["mochila.json"] else lista
 
     @staticmethod
     def salvar(lista, file: str, funcao_dict):

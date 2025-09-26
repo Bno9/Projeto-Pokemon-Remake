@@ -8,7 +8,7 @@
             "usable-in-battle",
             "holdable"
         ],
-        "quantidade": 29,
+        "quantidade": 45,
         "chance_captura": 50
     },
     "poke-ball": {
@@ -20,7 +20,7 @@
             "usable-in-battle",
             "holdable"
         ],
-        "quantidade": 42,
+        "quantidade": 50,
         "chance_captura": 20
     }
 }

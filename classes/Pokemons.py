@@ -3,7 +3,7 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
 class Pokemon:
-    def __init__(self, nome, tipos, stats, lista_ataques):
+    def __init__(self, nome, tipos, stats, lista_ataques=None):
         self.nome = nome
         self.tipos = tipos
         self.stats = stats
@@ -17,7 +17,43 @@ class Pokemon:
         if self.can_learn:
             for ataque in self.can_learn:
                 if ataque["level_learned_at"] == 1 and len(self.ataques) < 2:
-                    self.ataques.append(ataque)
+                        if ataque not in self.ataques:
+                            self.ataques.append(ataque)
+            for i in self.ataques:
+                print(self.nome, i["ataque"].nome)
+
+    def to_dict(self):
+        return {
+            "tipos": self.tipos,
+                "stats": self.stats,
+                "hp_atual": self.hp_atual,
+                "can_learn": self.can_learn
+                }
+
+
+    def atacar(self, pokemon_inimigo, ataque):
+
+        if pokemon_inimigo.hp_atual > 0:
+        
+            pokemon_inimigo.hp_atual -= ataque.dano
+            print(f"{self} usou {ataque.nome} e deu {ataque.dano} em {pokemon_inimigo}")
+
+        else:
+            print(f"{self} foi derrotado")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     def to_dict(self):
         return {

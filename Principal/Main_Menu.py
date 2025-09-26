@@ -26,7 +26,7 @@ class MainMenu(MenuState):
         print("\n=== Menu Principal ===")
         print("1 - Capturar Pokemons")
         print("2 - Loja")
-        print("3 - Pokédex")
+        print("3 - Pokédex / Mudar equipe")
         print("4 - Lutar")
         print("0 - Sair")
         escolha = input("Escolha: ").strip()
@@ -39,7 +39,7 @@ class MainMenu(MenuState):
             menu.change_state(ShopMenu())
         elif escolha == "3":
             menu.change_state(PokedexMenu())
-        elif escolha == "3":
+        elif escolha == "4":
             from batalha.Luta import BatalhaMenu
             menu.change_state(BatalhaMenu())
         elif escolha == "0":
@@ -48,7 +48,7 @@ class MainMenu(MenuState):
             print("Opção inválida. Tente novamente.")
 
 class PokedexMenu(MenuState):
-    """Menu da pokedex, ainda não tenho certeza do que vou fazer aqui, mas ja deixei a base"""
+    """Menu da pokedex, aqui vai ser possivel mudar os pokemons que estão na equipe e visualizar os stats"""
     def execute(self, menu, gamedata):
         print("\n=== Pokédex (exemplo) ===")
 
