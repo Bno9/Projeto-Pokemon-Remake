@@ -27,7 +27,7 @@ class Pokemon:
             "tipos": self.tipos,
                 "stats": self.stats,
                 "hp_atual": self.hp_atual,
-                "can_learn": self.can_learn
+                "can_learn": [ataque.to_dict() for ataque in self.can_learn]
                 }
 
 
